@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Book Details</title>
+</head>
+<body>
+
+	<form th:object="${bookdetails}" th:action="@{/editBookDetails/__${bookdetails.id}__}" method="post">
+	
+		<div>
+			<label>Book:</label>
+			<input th:field="*{name}"/>
+		</div>
+
+		<div>
+			<label>ISBN:</label>
+			<input th:field="*{isbn}"/>
+		</div>
+
+  		<table>
+			<thead>
+				<th>Author</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<button type="submit" name="addRow" th:value="addRow">Add new Author</button>
+					</td>
+				</tr>
+  				<tr th:each="auth, authStats : *{authors}">
+					<td><input type="hidden" th:field="*{authors[__${authStats.index}__].id}"/></td>
+					<td><input type="hidden" th:field="*{authors[__${authStats.index}__].book.id}"/></td>
+					<td><input th:field="*{authors[__${authStats.index}__].authname}"/></td>
+				</tr>
+			</tbody>
+		</table>		
+
+		<div>
+			<button type="submit">Save or Update</button>
+		</div>	
+		
+
+	
+	</form>
+
+</body>
+</html>

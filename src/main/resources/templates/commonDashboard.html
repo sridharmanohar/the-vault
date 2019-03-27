@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Common Dashboard</title>
+
+	<link rel="stylesheet" th:href="@{/css/common.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>
+	
+</head>
+<body>
+
+	<h2 class="page-header">Dashboard</h2>
+	
+	<table id="commondashboard" class="table table-striped">
+		<thead>
+			<tr>
+				<th>View</th>
+				<th>Possible Actions</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<tr>
+				<td><a th:href="@{/showAllVaultUsers}">Show All Vault Users</a></td>
+				<td>View All Vault Application Users<br/> 
+					Edit User Details<br/>
+					Edit User Secrets</td>
+			</tr>
+			<tr>
+				<td><a th:href="@{/showAllVaultTopics}">Show All Vault Secret Topics</a></td>
+				<td>View All Vault Secret Topics<br/> 
+					Edit Secret Topic Properties</td>
+			</tr>
+			<tr>
+				<td><a th:href="@{/addUser}">Add New Vault User</a></td>
+				<td>Add User</td>
+			</tr>
+			<tr>
+				<td><a th:href="@{/addTopic}">Add New Secret Topic (and Keys)</a></td>
+				<td>Add Secret Topic</td>
+			</tr>
+		</tbody>
+	
+	</table>
+
+
+  <script type="text/javascript" th:src="@{/webjars/jquery/3.3.1-1/jquery.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+
+
+<!--  	<div><a th:href="@{/showUserNewMappingTemplate/29}">User - Add New Personal Mappings</a></div>
+	<div><a th:href="@{/showUserMappings/29}">User - Show Personal Mappings</a></div>
+	<div><a th:href="@{/adminDisplayTopics}">Admin - Display All Topics</a></div>
+	<div><a th:href="@{/adminDisplayUsers}">Admin - Display All Users</a></div>  -->
+
+
+
+
+</body>
+</html>

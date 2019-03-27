@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Add Secret Topic</title>
+
+	<link rel="stylesheet" th:href="@{/css/common.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>
+</head>
+<body>
+
+	<div class="container container-width-usersecrets">
+	<h2 class="page-header">Add Secret Topic</h2>
+	
+	<form th:object="${newtopic}" th:action="@{/addTopic}" method="post">
+		<div th:if="${#fields.hasGlobalErrors()}">
+			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}"/>
+		</div>
+
+		<h4>Topic</h4>
+		<div class="row">
+			<div class="col-md-3">
+				<input class="form-control" type="text" th:field="*{topicname}"/>
+				<div th:if="${#fields.hasErrors('topicname')}" th:errors="*{topicname}"></div>
+			</div>
+		</div>		
+
+		<h4 class="top-gap2">Topic Key(s)</h4>
+		<div class="row">
+			<div class="col-md-3 top-gap0" th:each="row, rowStats : ${newtopic.topicTemplates}">
+				<input class="form-control" type="text" th:field="${newtopic.topicTemplates[__${rowStats.index}__].propname}"/>
+			</div>
+		</div>		
+		
+		<div class="row">
+			<button class="btn btn-primary btn-md btn-block" type="submit">Add new Topic</button>
+			<button class="btn btn-primary btn-md btn-block" type="submit" name="addRow" th:value="addRow">Add Topic Params</button>
+		</div>
+	</form>
+	</div>
+
+  <script type="text/javascript" th:src="@{/webjars/jquery/3.3.1-1/jquery.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+
+
+</body>
+</html>

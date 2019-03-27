@@ -1,0 +1,58 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+thead {
+	background-color: #a3d49c;
+}
+
+hr {
+	margin-top: 3rem !important;
+}
+
+.table {
+	width: 60% !important;
+	margin-bottom: 1rem;
+	color: #212529;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page-header {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.btn-block {
+    display: block !important;
+    width: 17% !important;
+    margin-top: 5% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.container-width-userdetails {
+	max-width: 695px !important;
+}
+
+.container-width-usersecrets {
+	max-width: 1140px !important;
+}
+
+.top-gap0 {
+	margin-top: 3%;
+}
+
+.top-gap1 {
+	margin-top: 3%;
+	margin-left: auto !important;
+}
+
+.top-gap2 {
+	margin-top: 8%;
+}

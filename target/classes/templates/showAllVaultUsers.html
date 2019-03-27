@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Vault Users</title>
+
+	<link rel="stylesheet" th:href="@{/css/common.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>
+</head>
+<body>
+	
+	<h2 class="page-header">All Vault Users</h2>
+	
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>User</th>
+				<th>Possible Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="user : ${allusers}">
+				<td th:text="${user.firstname + ' ' + user.lastname}"/>
+				<td>
+					<a th:href="@{/userDetails/__${user.id}__/}">Edit User Details</a>
+					<br/>
+					<a th:href="@{/userSecrets/__${user.id}__/}">Edit / Add User Secrets</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+  <script type="text/javascript" th:src="@{/webjars/jquery/3.3.1-1/jquery.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+
+
+</body>
+</html>

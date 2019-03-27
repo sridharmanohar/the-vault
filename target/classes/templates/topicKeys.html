@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Edit Topic Keys</title>
+	
+	<link rel="stylesheet" th:href="@{/css/common.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" />
+</head>
+<body>
+
+	<div class="container container-width-usersecrets">
+	<h2 class="page-header">Secret Topic</h2>
+
+	<form th:object="${topic1}" th:action="@{/topicKeys/__${topic1.id}__}" method="post">
+		<div th:if="${#fields.hasGlobalErrors()}">
+			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}"/>
+		</div>
+	
+		<h4>Topic Name</h4>
+		<div class="row">
+			<div class="col-md-3">
+			<input class="form-control top-gap0" type="text" th:field="*{topicname}"/>
+			<div th:if="${#fields.hasErrors('topicname')}">
+				<p th:each="err1 : ${#fields.errors('topicname')}" th:text="${err1}"/>
+			</div>
+			</div>
+		</div>
+
+		<h4 class="top-gap2">Topic Key(s)</h4>
+		<div class="row">
+		<div class="col-md-3 top-gap0" th:each="tt, itstat : ${topic1.topicTemplates}">
+			<input type="hidden" th:field="${topic1.topicTemplates[__${itstat.index}__].id}" />
+			<input type="hidden" th:field="${topic1.topicTemplates[__${itstat.index}__].topic.id}" />
+			<input class="form-control" th:field="${topic1.topicTemplates[__${itstat.index}__].propname}" />
+		</div>
+		</div>
+
+		<div class="row">
+				<button class="btn btn-primary btn-md btn-block"  type="submit">Save</button>
+				<button class="btn btn-primary btn-md btn-block" type="submit" name="addRow" th:value="addRow">Add new Topic Key</button>
+		</div>
+	</form>
+	</div>
+
+  <script type="text/javascript" th:src="@{/webjars/jquery/3.3.1-1/jquery.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+
+
+</body>
+</html>

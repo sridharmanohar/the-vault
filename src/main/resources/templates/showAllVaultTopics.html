@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Vault Secret Topics</title>
+
+	<link rel="stylesheet" th:href="@{/css/common.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>
+</head>
+<body>
+
+	<h2 class="page-header">All Vault Secret Topics</h2>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Topic</th>
+				<th>Possible Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="onetopic : ${alltopics}">
+				<td th:text="${onetopic.topicname}">Name1</td>
+				<td>
+					<a th:href="@{/topicKeys/__${onetopic.id}__}">Edit Topic Name</a>
+					<br/>
+					<a th:href="@{/topicKeys/__${onetopic.id}__}">Edit Topic Keys</a>
+					<br/>
+					<a th:href="@{/topicKeys/__${onetopic.id}__}">Add new Topic Key(s)</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+  <script type="text/javascript" th:src="@{/webjars/jquery/3.3.1-1/jquery.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+
+
+</body>
+</html>
