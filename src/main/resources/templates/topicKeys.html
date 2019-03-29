@@ -15,9 +15,14 @@
 	<div class="container container-width-usersecrets">
 	<h2 class="page-header">Secret Topic</h2>
 
-	<form th:object="${topic1}" th:action="@{/topicKeys/__${topic1.id}__}" method="post">
+	<form th:object="${topic}" th:action="@{/topicKeys/__${topic.id}__}" method="post">
+		
+		<div th:if="${successMessage}">
+			<div class="alert alert-success" th:text="${successMessage}"></div>
+		</div>
+		
 		<div th:if="${#fields.hasGlobalErrors()}">
-			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}"/>
+			<p class="alert alert-danger" th:each="err : ${#fields.globalErrors()}" th:text="${err}"/>
 		</div>
 	
 		<h4>Topic Name</h4>
@@ -25,17 +30,17 @@
 			<div class="col-md-3">
 			<input class="form-control top-gap0" type="text" th:field="*{topicname}"/>
 			<div th:if="${#fields.hasErrors('topicname')}">
-				<p th:each="err1 : ${#fields.errors('topicname')}" th:text="${err1}"/>
+				<p class="alert alert-danger" th:each="err1 : ${#fields.errors('topicname')}" th:text="${err1}"/>
 			</div>
 			</div>
 		</div>
 
 		<h4 class="top-gap2">Topic Key(s)</h4>
 		<div class="row">
-		<div class="col-md-3 top-gap0" th:each="tt, itstat : ${topic1.topicTemplates}">
-			<input type="hidden" th:field="${topic1.topicTemplates[__${itstat.index}__].id}" />
-			<input type="hidden" th:field="${topic1.topicTemplates[__${itstat.index}__].topic.id}" />
-			<input class="form-control" th:field="${topic1.topicTemplates[__${itstat.index}__].propname}" />
+		<div class="col-md-3 top-gap0" th:each="tt, itstat : ${topic.topicTemplates}">
+			<input type="hidden" th:field="${topic.topicTemplates[__${itstat.index}__].id}" />
+			<input type="hidden" th:field="${topic.topicTemplates[__${itstat.index}__].topic.id}" />
+			<input class="form-control" th:field="${topic.topicTemplates[__${itstat.index}__].propname}" />
 		</div>
 		</div>
 

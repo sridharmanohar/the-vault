@@ -16,21 +16,26 @@
 	
 	<h2 class="page-header">Add User</h2>
 	
-	<form action="#" th:object="${user}" th:action="@{/addUser}" method=post>
+	<form th:object="${user}" th:action="@{/addUser}" method=post>
+
+	<div th:if="${successMessage}">
+		<div class="alert alert-success" th:text="${successMessage}"></div>
+	</div>
+
 	<div th:if="${#fields.hasGlobalErrors()}">
-		<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">
+		<p class="alert alert-danger" th:each="err : ${#fields.globalErrors()}" th:text="${err}">
 	</div>
 	
 	<div class="row">
 		<div class="col-md-6">
 			<label>First Name:</label>
 			<input class="form-control" type="text" th:field="${user.firstname}"/>
-		<div th:if="${#fields.hasErrors('firstname')}" th:errors="${user.firstname}">First Name Err</div>
+		<div class="alert alert-danger" th:if="${#fields.hasErrors('firstname')}" th:errors="${user.firstname}"></div>
 		</div>
 		<div class="col-md-6">
 			<label>Last Name:</label>
 			<input class="form-control" type="text" th:field="${user.lastname}"/>
-		<div th:if="${#fields.hasErrors('lastname')}" th:errors="${user.lastname}">Last Name Err</div>
+		<div class="alert alert-danger" th:if="${#fields.hasErrors('lastname')}" th:errors="${user.lastname}"></div>
 		</div>
 	</div>	
 		<button class="btn btn-primary btn-md btn-block" type="submit">Add User</button>

@@ -27,25 +27,40 @@ import org.vault.repo.TopicGroupRepo;
 import org.vault.repo.TopicRepo;
 import org.vault.repo.UserRepo;
 import org.vault.validations.CustomValidationUtil;
+import org.vault.validations.TopicValidator;
 import org.vault.validations.UserValidator;
 
+/**
+ * @author sridhar
+ *
+ */
 @Controller
 public class UserController {
 
-	
-	private static final String DUPLICATE_MSG = "duplicate";
-	
-	// Views
+	/**
+	 * Constants used for Views.
+	 */
 	private static final String USER_DETAILS_VIEW = "userDetails.html";
 	private static final String DASHBOARD_VIEW = "commonDashboard.html";
 	private static final String USER_SECRETS_VIEW = "userSecrets.html";
-	private static final String ADD_SECRET_VIEW = "addSecret";
-	
-	// Model Attribute Keys
+	private static final String ADD_SECRET_VIEW = "addSecret.html";
+	private static final String SHOW_ALL_VAULT_USERS_VIEW = "showAllVaultUsers.html";
+	private static final String ADD_USER_VIEW = "addUser.html";
+
+	/**
+	 * Constants used as keys in model objects.
+	 */
 	private static final String USER_SECRETS_MODEL_KEY = "userMappings";
-	private static final String USER_MODEL_KEY = "user";
+	private static final String USER_OBJ_MODEL_KEY = "user";
 	private static final String SUCCESS_MODEL_KEY = "successMessage";
-	
+	private static final String TOPIC_LIST_MODEL_KEY = "topicList";
+	private static final String TOPIC_OBJ_MODEL_KEY = "newTopic";
+	private static final String DUPLICATE_MSG = "duplicate";
+
+	/**
+	 * Constants used for setting keys in bindingResult or to call other validation
+	 * util methods with some fixed parameter values.
+	 */
 	private static final int MIN_LENGTH = 3;
 	private static final int MAX_LENGTH = 90;
 	private static final String SECRET_VAL_SIZE_MSG = "All Secrets";
@@ -60,62 +75,166 @@ public class UserController {
 	@Autowired
 	private TopicRepo topicRepo;
 
-	@InitBinder(USER_MODEL_KEY)
+	/**
+	 * 1. This gets invoked whenever an attribute into the model with the key as
+	 * mentioned in the @InitBinder.
+	 * 
+	 * 2. Also, gets invoked whenever there is an method param with
+	 * an @ModelAttribute with the name same as the name given in the @InitBinder.
+	 * 
+	 * 3. The validator set here is called when the method param with the
+	 * matching @ModelAttributed is found with an @Validated annot.
+	 * 
+	 * @param webDataBinder
+	 */
+	@InitBinder(USER_OBJ_MODEL_KEY)
 	private void initUserBinder(WebDataBinder webDataBinder) {
 		System.out.println("user binder inoked");
 		webDataBinder.setDisallowedFields("id");
 		webDataBinder.setValidator(new UserValidator());
 	}
 
+	/**
+	 * 1. This gets invoked whenever an attribute into the model with the key as
+	 * mentioned in the @InitBinder.
+	 * 
+	 * 2. Also, gets invoked whenever there is an method param with
+	 * an @ModelAttribute with the name same as the name given in the @InitBinder.
+	 * 
+	 * 3. The validator set here is called when the method param with the
+	 * matching @ModelAttributed is found with an @Validated annot.
+	 * 
+	 * @param webDataBinder
+	 */
+	@InitBinder(TOPIC_OBJ_MODEL_KEY)
+	private void initTopicBinder(WebDataBinder webDataBinder) {
+		System.out.println("topic binder inoked");
+		webDataBinder.setValidator(new TopicValidator());
+	}
+
+	/**
+	 * 1. This methods shows all vault users.
+	 * 
+	 * 2. Fetches all the users from the repo. and adds the List<Users> into the
+	 * model.
+	 * 
+	 * 3. Transfers the control to the desired view - ShowAllVaultUsers view.
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/showAllVaultUsers")
-	public String adminUserDisplay(Model model) {
-		System.out.println("in adminUserDisplay COntroller");
+	public String showAllVaultUsers(Model model) {
 		List<User> user = this.userrepo.findAll();
 		model.addAttribute("allusers", user);
-		return "showAllVaultUsers.html";
+		return SHOW_ALL_VAULT_USERS_VIEW;
 	}
 
+	/**
+	 * 1. This method receives the Add new User request.
+	 * 
+	 * 2. Adds a new User object to the model and directs the control to the desired
+	 * view.
+	 *
+	 * @param user
+	 * @return
+	 */
 	@GetMapping("/addUser")
-	public String addUser(User user) {
-		return "addUser";
+	public String addUser(Model model) {
+		model.addAttribute(USER_OBJ_MODEL_KEY, new User());
+		return ADD_USER_VIEW;
 	}
 
+	/**
+	 * 1. This method processes the Add new User request.
+	 * 
+	 * 2. Validations are performed by the Validator and in case of any errors the
+	 * control is transferred back to the view with the messages.
+	 * 
+	 * 3. If there are no errors found by the validator, then a db call is made to
+	 * find any users with the same first and last names. If exists, then an error
+	 * is set in the bindingResult and the control transferred backt to the view. If
+	 * no, then the new user is saved and the success message is added to the model
+	 * and sent back to the view to display the success message.
+	 * 
+	 * @param user
+	 * @param bindingResult
+	 * @param model
+	 * @return
+	 */
 	@PostMapping("/addUser")
-	public String addUserProcess(@Validated User user, BindingResult bindingResult) {
+	public String addUserProcess(@Validated @ModelAttribute(name = USER_OBJ_MODEL_KEY) User user,
+			BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors())
-			return "addUser.html";
+			return ADD_USER_VIEW;
 		System.out.println("Inside of Add User...and params are:" + user.getFirstname() + " " + user.getLastname());
 		List<User> users = this.userrepo.findByFirstnameAndLastname(user.getFirstname(), user.getLastname());
-		System.out.println("Call to db completed to find out duplicates.");
 		if (users.isEmpty()) {
 			this.userrepo.save(user);
-			return "commonDashboard";
+			model.addAttribute(SUCCESS_MODEL_KEY, "Op. Successful");
+			return ADD_USER_VIEW;
 		} else {
-			bindingResult.reject("duplicate", "user already exists.");
-			return "addUser.html";
+			bindingResult.reject(DUPLICATE_MSG, new String[] { "User" }, null);
+			return ADD_USER_VIEW;
 		}
 	}
 
+	/**
+	 * 1. This method receives the request to show user details page for the
+	 * provided user id.
+	 * 
+	 * 2. Fetches all user details from the vault repo. for the given user id.
+	 * 
+	 * 3. Adds the user object to the model.
+	 * 
+	 * 4. Directs control to the desired view.
+	 * 
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/userDetails/{userId}")
 	public String showUserDetails(@PathVariable(name = "userId") int id, Model model) {
 		System.out.println("edit user");
 		User user = this.userrepo.findById(id);
-		model.addAttribute(USER_MODEL_KEY, user);
+		model.addAttribute(USER_OBJ_MODEL_KEY, user);
 		return USER_DETAILS_VIEW;
 	}
 
+	/**
+	 * 1. This method processes the User details edited.
+	 * 
+	 * 2. Validations for this method are performed by the User validator. Hence,
+	 * the use of @Validated annot.
+	 * 
+	 * 3. If there are any errors in the binding result, control is transferred back
+	 * to the view with error message. Error message is set in the validator.
+	 * 
+	 * 4. Before we save the updated user details, a db call is made to find any
+	 * users with given first name and last name. This is to ensure, no two users
+	 * end up having the same name in the repo.
+	 * 
+	 * 5. In case of duplicate Users, a corresponding error message is set into the
+	 * binding result and control transferred back to the view.
+	 * 
+	 * 5. While saving the updated user details to the repo., we ensure we set the
+	 * user id into User object, this is to make sure a new user entry is not
+	 * created and hibernate understands this as an update rather than an insert.
+	 * 
+	 * @param id
+	 * @param user
+	 * @param bindingResult
+	 * @param model
+	 * @return
+	 */
 	@PostMapping("/userDetails/{userId}")
 	public String processUserDetails(@PathVariable(name = "userId") int id,
-			@Validated @ModelAttribute(name = USER_MODEL_KEY) User user, BindingResult bindingResult, Model model) {
+			@Validated @ModelAttribute(name = USER_OBJ_MODEL_KEY) User user, BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors())
 			return USER_DETAILS_VIEW;
-		System.out.println("Inside of Edit User...and params are:" + user.getFirstname() + " " + user.getLastname());
-		System.out.println("user id param:" + id);
-		System.out.println("user id obj:" + user.getId());
 		List<User> users = this.userrepo.findByFirstnameAndLastname(user.getFirstname(), user.getLastname());
 		System.out.println("Call to db completed to find out duplicates.");
 		if (users.isEmpty()) {
-			// If we don't set id and directly proceed with the save then a new instance will be created.
 			user.setId(id);
 			this.userrepo.save(user);
 			model.addAttribute(SUCCESS_MODEL_KEY, "Op. Successful.");
@@ -126,46 +245,74 @@ public class UserController {
 		}
 	}
 
+	/**
+	 * 
+	 * 1. The TopicGroups fetched had duplicates because User has a
+	 * List<TopicGroups> and also because of the kind of join query it formed, dups
+	 * were fetched. <br/>
+	 * <br/>
+	 * 
+	 * 2. To overcome that, had to dump the List<TopicGroup>s into Set, to weed out
+	 * dups. <br/>
+	 * <br/>
+	 * 
+	 * 3. And then again, dump the unique set of TopicGroups into List. <br/>
+	 * <br/>
+	 * 
+	 * 4. List is required for index-based iteration in view, not possible to do so
+	 * with Set.
+	 * 
+	 * @param userid
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/userSecrets/{userId}")
 	public String showUserSecrets(@PathVariable("userId") int userid, Model model) {
-		System.out.println("user id is:" + userid);
 		User user = this.userrepo.findById(userid);
-		System.out.println("User Name:" + user.getFirstname());
-		// Getting duplicates because of the internal query it is forming while fetch.
-		// Hence used Set to weed out dups.
 		Set<TopicGroup> setTopicGroup = user.getTopicGroups().stream().collect(Collectors.toSet());
-		// Dumping the Set contents into List in order to enable ordering, which is
-		// necessary when I play with this List in thymeleaf.
 		List<TopicGroup> listTopicGroup = setTopicGroup.stream().collect(Collectors.toList());
 		user.setTopicGroups(listTopicGroup);
 		model.addAttribute(USER_SECRETS_MODEL_KEY, user);
 		return USER_SECRETS_VIEW;
 	}
 
+	/**
+	 * 1. This method processes the User Secrets i.e. updates to secret values.
+	 * 
+	 * 2. Was Unable to do field level validation because the object supplied to
+	 * model is different hence the validator that will be called will also not be
+	 * supportive of the required i.e. in this case, a TopicDetail object.
+	 * 
+	 * 3. Init. TopicDetails with the required info.
+	 * 
+	 * 4. Added all TopicDetails to the List.
+	 * 
+	 * 5. Saved the TopicGroup object and it's related List of TopicDetails. To
+	 * ensure a new entry is not created, TopicGroup Id is supplied. Now only
+	 * updates will be made into topic_details table.
+	 * 
+	 * @param user
+	 * @param bindingResult
+	 * @param model
+	 * @return
+	 */
 	@PostMapping("/userSecrets/{userId}")
-	public String processUserSecrets(@ModelAttribute(name = USER_SECRETS_MODEL_KEY) User user, BindingResult bindingResult, Model model) {
+	public String processUserSecrets(@ModelAttribute(name = USER_SECRETS_MODEL_KEY) User user,
+			BindingResult bindingResult, Model model) {
 		List<TopicDetail> listTD = new ArrayList<TopicDetail>();
 		System.out.println("size of tg:" + user.getTopicGroups().size());
 
 		for (TopicGroup tg : user.getTopicGroups()) {
 			for (TopicDetail td : tg.getTopicDetails()) {
-
 				System.out.println("td id:" + td.getId());
-				System.out.println("td propval:" + td.getPropvalue().length());
-				System.out.println("td tg id:" + td.getTopicGroup().getId());
-				System.out.println("td tt id:" + td.getTopicTemplate().getId());
-
-				// Unable to do field level validation because the object supplied to model is
-				// different hence the validator that will be called will also not be
-				// supportive of the required i.e. in this case, a TopicDetail object.
-				boolean fieldLength = CustomValidationUtil.isFieldLengthValid(td.getPropvalue().length(), 3, 90);
+				boolean fieldLength = CustomValidationUtil.isFieldLengthValid(td.getPropvalue().length(), MIN_LENGTH,
+						MAX_LENGTH);
 				System.out.println("field len:" + fieldLength);
 				if (!fieldLength) {
 					bindingResult.reject(FIELD_SIZE_MSG_KEY, new String[] { SECRET_VAL_SIZE_MSG,
 							Integer.toString(MIN_LENGTH), Integer.toString(MAX_LENGTH) }, null);
 					return USER_SECRETS_VIEW;
 				}
-
 				TopicDetail tdObj = new TopicDetail(td.getId(), td.getPropvalue(), td.getTopicGroup().getId(),
 						td.getTopicTemplate().getId());
 				System.out.println("adding td into list");
@@ -174,10 +321,7 @@ public class UserController {
 
 			System.out.println("tg id:" + tg.getId());
 			System.out.println("size of list:" + listTD.size());
-			System.out.println("tg tp id:" + tg.getTopic().getId());
-			System.out.println("tg usr id:" + user.getId());
 			long start = System.currentTimeMillis();
-			System.out.println("about to call db save....");
 			this.topicGroupRepo.save(new TopicGroup(tg.getId(), listTD, tg.getTopic().getId(), user.getId()));
 			long end = System.currentTimeMillis();
 			System.out.println("total time taken to save:" + (end - start));
@@ -186,53 +330,119 @@ public class UserController {
 		return USER_SECRETS_VIEW;
 	}
 
+	/**
+	 * 1. This method receives the request from the view to Add a Secret.
+	 * 
+	 * 2. Fetches the List of Secret Topics available in the Vault repo.
+	 * 
+	 * 3. This listofTopics is added to the model for iteration in the view,
+	 * 
+	 * 4. A new Topic object is also attached to the model so that the view can map
+	 * the listofTopics values to the model.
+	 * 
+	 * 5. The User id for whom the request is being processed is also added to the
+	 * model as a model attribute.
+	 * 
+	 * 6. This method then transfers the control to the view - Add Secret View.
+	 * 
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/addSecret/{userId}")
 	public String showAddSecret(@PathVariable("userId") int id, Model model) {
 		List<Topic> listTopics = this.topicRepo.findAll();
-		System.out.println("user id from req:" + id);
-		// to show secret topics in the drop-down.
-		model.addAttribute("topicList", listTopics);
-		model.addAttribute("newTopic", new Topic());
-		model.addAttribute("forUser", new User(id));
+		model.addAttribute(TOPIC_LIST_MODEL_KEY, listTopics);
+		model.addAttribute(TOPIC_OBJ_MODEL_KEY, new Topic());
+		model.addAttribute(USER_OBJ_MODEL_KEY, new User(id));
 		return ADD_SECRET_VIEW;
 	}
 
+	/**
+	 * 1. This method processes the Add a new Secret request.
+	 * 
+	 * 2. A db call is made to find the list of all topics and then that is added to
+	 * the model along with the user id. This is a duplicate effort (already done in
+	 * the corresponding @GetRequest but had to be done here again because when the
+	 * user selects a Topic in the view and submits the form to view its template,
+	 * then while sending back the request back to the view (from the controller),
+	 * If I am not re-setting all this required data, then this won't be available
+	 * in the view. This is also required in case of binding errors, when the
+	 * controls rocks back-and-forth i.e. between the view and the controller. Have
+	 * to find a more efficient way of doing this.
+	 * 
+	 * 3. When the user submits the form with the request to view the selected topic
+	 * template, then the HttpServletRequest will have the mentioned param.
+	 * 
+	 * 4. Since in order to add a new secret, we need to make an entry into the
+	 * topic_groups and topic_details table, we need to populate the corresponding
+	 * objects with the required info.
+	 * 
+	 * 5. TopicGroup is init. with the Topic Id and the User Id.
+	 * 
+	 * 6. TopicDetail is init. with the propvalue (secret) and the Topic Template Id
+	 * (secret key id).
+	 * 
+	 * 7. The list of all such TopicDetails (secrets) is added into the TopicGroup
+	 * and then it is saved.
+	 * 
+	 * 8. Validation to ensure the propvalues (secrets) are all within the valid
+	 * range is also done within this method only. Field level validation could not
+	 * be done because the desired object was not added to the model and hence not
+	 * available to the Validator.
+	 * 
+	 * @param id
+	 * @param newtopic
+	 * @param bindingResult
+	 * @param httpServletRequest
+	 * @param model
+	 * @return
+	 */
 	@PostMapping("/addSecret/{userId}")
-	public String userNewMappingProcess(@PathVariable("userId") int id, @ModelAttribute("newTopic") Topic newtopic,
+	public String processAddSecret(@PathVariable("userId") int id,
+			@ModelAttribute(name = TOPIC_OBJ_MODEL_KEY) Topic newtopic, BindingResult bindingResult,
 			HttpServletRequest httpServletRequest, Model model) {
-		System.out.println("inside mapping");
+
+		List<Topic> listTopics = this.topicRepo.findAll();
+		model.addAttribute(TOPIC_LIST_MODEL_KEY, listTopics);
+		model.addAttribute(USER_OBJ_MODEL_KEY, new User(id));
 		System.out.println("fetched in path:" + id);
-		
-		// This is true when user selects a template to view.
-		// Will be null when the user submits the form with secret key-value details.
+
 		if (httpServletRequest.getParameter("viewTemplate") != null) {
-			List<Topic> listTopics = this.topicRepo.findAll();
-			System.out.println("size of listopics:" + listTopics.size());
-			// setting the attributes values again to make them available in the view again.
-			model.addAttribute("topicList", listTopics);
-			model.addAttribute("forUser", new User(id));
-			System.out.println("inside mapping1");
-			return "addSecret";
+			return ADD_SECRET_VIEW;
 		} else {
-			System.out.println("topic id:" + newtopic.getId());
-			System.out.println("user id is:" + id);
+
 			TopicGroup tg = new TopicGroup(newtopic.getId(), id);
+
 			System.out.println("tt size:" + newtopic.getTopicTemplates().size());
 			for (TopicTemplate tt : newtopic.getTopicTemplates()) {
-				System.out.println("td size:" + tt.getTopicDetails().size());
 				for (TopicDetail td : tt.getTopicDetails()) {
+
+					boolean fieldLength = CustomValidationUtil.isFieldLengthValid(td.getPropvalue().length(),
+							MIN_LENGTH, MAX_LENGTH);
+					System.out.println("field len:" + fieldLength);
+					if (!fieldLength) {
+						bindingResult.reject(FIELD_SIZE_MSG_KEY, new String[] { SECRET_VAL_SIZE_MSG,
+								Integer.toString(MIN_LENGTH), Integer.toString(MAX_LENGTH) }, null);
+						return ADD_SECRET_VIEW;
+					}
+
 					TopicDetail td1 = new TopicDetail(td.getPropvalue(), td.getTopicTemplate().getId());
 					tg.addTopicDetails(td1);
-					System.out.println("topic temp id:" + td.getTopicTemplate().getId());
-					System.out.println("propvals" + td.getPropvalue());
 				}
 			}
-			System.out.println("calling save...");
 			this.topicGroupRepo.save(tg);
 		}
-		return "commonDashboard";
+		model.addAttribute(SUCCESS_MODEL_KEY, "Op. Successful.");
+		return ADD_SECRET_VIEW;
 	}
 
+	/**
+	 * 1. This is where the first request from the view comes to - the controller
+	 * sends the request to the Dashboard view.
+	 * 
+	 * @return
+	 */
 	@GetMapping("/")
 	public String showCommonDashboard() {
 		return DASHBOARD_VIEW;
