@@ -38,7 +38,7 @@ public class TopicController {
 
 	@InitBinder("topic1")
 	public void initTopicBinder(WebDataBinder webDataBinder) {
-		System.out.println("init binder");
+		System.out.println("init binder topic");
 		webDataBinder.setDisallowedFields("id");
 		webDataBinder.setValidator(validator);
 	}

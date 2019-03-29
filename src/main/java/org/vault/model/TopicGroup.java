@@ -3,7 +3,6 @@ package org.vault.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -19,50 +18,57 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
-
 /**
- * The persistent class for the topic_groups database table.
+ * The persistent class for the topic_groups database table. This is a critical
+ * table which basically contains the topic id and user id.
+ * 
+ * Consider a system with 2 Users - A and B and 3 Topics - 1, 2 and 3. If User A
+ * is associated with 2 instances of Topic 1 (for instance If topic 1 is Email
+ * and User has multiple email addresses) then this table will have two entries
+ * of Topic 1 associated with User A. And the primary key of this table (i.e.
+ * topic group id) will be stored in the Topic Details table which will tell us
+ * which Email key-Value pairs belong to which entry of Topic-User group.
  * 
  */
 @Entity
-@Table(name="topic_groups")
+@Table(name = "topic_groups")
 //@NamedQuery(name="TopicGroup.findAll", query="SELECT t FROM TopicGroup t")
 public class TopicGroup implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	//bi-directional many-to-one association to TopicDetail
-	@OneToMany(mappedBy="topicGroup", fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	// bi-directional many-to-one association to TopicDetail
+	@OneToMany(mappedBy = "topicGroup", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@Fetch(FetchMode.SUBSELECT)
 	private List<TopicDetail> topicDetails = new ArrayList<TopicDetail>();
 
-	//bi-directional many-to-one association to Topic
+	// bi-directional many-to-one association to Topic
 	@ManyToOne
-	@JoinColumn(name="topicid")
+	@JoinColumn(name = "topicid")
 	private Topic topic = new Topic();
 
-	//bi-directional many-to-one association to User
+	// bi-directional many-to-one association to User
 	@ManyToOne
-	@JoinColumn(name="userid")
+	@JoinColumn(name = "userid")
 	private User user = new User();
 
 	public TopicGroup() {
 	}
-	
+
 	public TopicGroup(int id, List<TopicDetail> topicDetails, int topicid, int userid) {
-		System.out.println("id:"+id);
-		System.out.println("td list:"+topicDetails.size());
-		System.out.println("topic id"+topicid);
-		System.out.println("user id"+ userid);
+		System.out.println("id:" + id);
+		System.out.println("td list:" + topicDetails.size());
+		System.out.println("topic id" + topicid);
+		System.out.println("user id" + userid);
 		this.id = id;
 		this.topicDetails = topicDetails;
 		this.topic.setId(topicid);
 		this.user.setId(userid);
 	}
-	
+
 	public TopicGroup(List<TopicDetail> topicDetails, int topicid, int userid) {
 		this.topicDetails = topicDetails;
 		this.topic.setId(topicid);
@@ -81,7 +87,6 @@ public class TopicGroup implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-
 
 	public List<TopicDetail> getTopicDetails() {
 		return topicDetails;
@@ -108,13 +113,15 @@ public class TopicGroup implements Serializable {
 	}
 
 	// solution to the problem where parent(topic_groups) and child(topic_details)
-	// are to be inserted in one go i.e. first an entry is made into topic_groups and
+	// are to be inserted in one go i.e. first an entry is made into topic_groups
+	// and
 	// using this pk an entry is made into topic_details.
-	// If you do not map the child instances to the parent, while inserting into child, the pk of the
+	// If you do not map the child instances to the parent, while inserting into
+	// child, the pk of the
 	// parent will not be found.
 	public void addTopicDetails(TopicDetail topicDetail) {
 		topicDetails.add(topicDetail);
 		topicDetail.setTopicGroup(this);
 	}
-	
+
 }
