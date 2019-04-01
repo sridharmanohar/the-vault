@@ -1,0 +1,22 @@
+01-04-2019 16:27:25.034 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet.traceDebug - GET "/", parameters={}
+01-04-2019 16:27:25.035 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping.getHandler - Mapped to public java.lang.String org.vault.controller.UserController.showCommonDashboard()
+01-04-2019 16:27:25.035 [http-nio-8080-exec-4] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor.preHandle - Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+01-04-2019 16:27:25.036 [http-nio-8080-exec-4] INFO  org.vault.controller.UserController.showCommonDashboard - Second log bro...
+01-04-2019 16:27:25.037 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver.getBestView - Selected 'text/html' given [text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8]
+01-04-2019 16:27:25.052 [http-nio-8080-exec-4] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor.afterCompletion - Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+01-04-2019 16:27:25.052 [http-nio-8080-exec-4] INFO  o.h.e.i.StatisticalLoggingSessionEventListener.end - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+01-04-2019 16:27:25.053 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet.logResult - Completed 200 OK
+01-04-2019 16:27:25.179 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet.traceDebug - GET "/favicon.ico", parameters={}
+01-04-2019 16:27:25.180 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping.getHandler - Mapped to ResourceHttpRequestHandler [class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/], class path resource []]
+01-04-2019 16:27:25.185 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet.logResult - Completed 200 OK

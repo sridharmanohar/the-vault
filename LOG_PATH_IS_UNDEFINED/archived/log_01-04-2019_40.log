@@ -1,0 +1,10 @@
+01-04-2019 16:28:22.655 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'hikariPoolDataSourceMetadataProvider'
+01-04-2019 16:28:22.656 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration'
+01-04-2019 16:28:22.678 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'entityManagerFactoryBuilder'
+01-04-2019 16:28:22.680 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'jpaVendorAdapter'
+01-04-2019 16:28:22.715 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.createArgumentArray - Autowiring by type from bean name 'entityManagerFactoryBuilder' via factory method to bean named 'jpaVendorAdapter'
+01-04-2019 16:28:22.720 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.createArgumentArray - Autowiring by type from bean name 'entityManagerFactory' via factory method to bean named 'entityManagerFactoryBuilder'
+01-04-2019 16:28:22.734 [restartedMain] DEBUG o.s.jdbc.datasource.DataSourceUtils.doGetConnection - Fetching JDBC Connection from DataSource
+01-04-2019 16:28:22.736 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+01-04-2019 16:28:23.382 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+01-04-2019 16:28:23.433 [restartedMain] DEBUG o.s.o.j.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default'

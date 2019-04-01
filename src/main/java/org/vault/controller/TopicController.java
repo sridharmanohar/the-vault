@@ -2,11 +2,14 @@ package org.vault.controller;
 
 import java.util.List;
 
+
 import java.util.Set;
 import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,21 +29,41 @@ import org.vault.validations.TopicValidator;
 @Controller
 public class TopicController {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(TopicController.class);
+	
+	/**
+	 * Constants used as keys in model objects.
+	 */
 	private static final String TOPICS_LIST_MODEL_KEY = "alltopics";
 	private static final String TOPIC_MODEL_KEY = "topic";
 	private static final String DUPLICATE_MSG = "duplicate";
 	private static final String SUCCESS_MODEL_KEY = "successMessage";
 
+	/**
+	 * Constants used for Views.
+	 */
 	private static final String SHOW_ALL_TOPICS_VIEW = "showAllVaultTopics.html";
 	private static final String SECRET_TOPIC_EDIT_VIEW = "topicKeys";
-	private static final String DASHBOARD_VIEW = "commonDashboard.html";
 	private static final String ADD_TOPIC_VIEW = "addTopic.html";
+
 	@Autowired
 	private TopicRepo topicRepo;
 
+	/**
+	 * 1. This is webdatabinder method. And gets called whenever the key associated
+	 * with the @InitBinder is added to the model or whenever such a key is referred
+	 * in the @ModelAttribute method param.
+	 * 
+	 * 2. Whenever it gets invoked, the validator is set.
+	 * 
+	 * 3. The validator set here will get called when the method with
+	 * a @ModelAttribute param is also associated with a @Validated annot.
+	 * 
+	 * @param webDataBinder
+	 */
 	@InitBinder(TOPIC_MODEL_KEY)
 	public void initTopicBinder(WebDataBinder webDataBinder) {
-		System.out.println("init binder topic");
+		LOGGER.debug("init binder topic");
 		webDataBinder.setDisallowedFields("id");
 		webDataBinder.setValidator(new TopicValidator());
 	}
@@ -152,39 +175,38 @@ public class TopicController {
 			@Validated @ModelAttribute(TOPIC_MODEL_KEY) Topic topic, BindingResult bindingResult,
 			HttpServletRequest httpServletRequest, Model model) {
 		if (bindingResult.hasErrors()) {
-			System.out.println("topic validator haserrors");
+			LOGGER.debug("topic validator haserrors");
 			topic.setId(id);
 			return SECRET_TOPIC_EDIT_VIEW;
 		}
 		String addRowIndicator = httpServletRequest.getParameter("addRow");
 		if (addRowIndicator != null) {
-			System.out.println("add row");
 			TopicTemplate tt = new TopicTemplate();
 			tt.setTopic(topic);
 			topic.getTopicTemplates().add(tt);
 			topic.setId(id);
-			System.out.println("new row added");
+			LOGGER.debug("new row added..");
 			return SECRET_TOPIC_EDIT_VIEW;
 		} else {
-			System.out.println("topic name" + topic.getTopicname());
+			LOGGER.debug("topic name" , topic.getTopicname());
 			List<Topic> topics = this.topicRepo.findByTopicname(topic.getTopicname());
 			if (topics.isEmpty()) {
-				System.out.println("no dups found.");
+				LOGGER.debug("no dups found.");
 				topic.setId(id);
 				this.topicRepo.save(topic);
 				model.addAttribute(SUCCESS_MODEL_KEY, "Op. Successful");
 				return SECRET_TOPIC_EDIT_VIEW;
 			} else {
-				System.out.println("dup found, validating it's authenticity..");
+				LOGGER.debug("dup found, validating it's authenticity..");
 				for (Topic t : topics) {
 					if (t.getId() == id) {
-						System.out.println("this dup is same as the one i am currently editing, no probs.");
+						LOGGER.debug("this dup is same as the one i am currently editing, no probs.");
 						topic.setId(id);
 						this.topicRepo.save(topic);
 						model.addAttribute(SUCCESS_MODEL_KEY, "Op. Successful");
 						return SECRET_TOPIC_EDIT_VIEW;
 					} else {
-						System.out.println("duplicate topic, reject");
+						LOGGER.debug("duplicate topic, reject");
 						topic.setId(id);
 						bindingResult.reject(DUPLICATE_MSG, new String[] { "Topic" }, null);
 						return SECRET_TOPIC_EDIT_VIEW;
@@ -211,6 +233,34 @@ public class TopicController {
 		return ADD_TOPIC_VIEW;
 	}
 
+	/**
+	 * 1. This method processes the request of adding new topic (secret) and it's
+	 * templates (keys).
+	 * 
+	 * 2. The UI field level validations for this method are done by its
+	 * corresponding validator.
+	 * 
+	 * 3. If there are any errors that are recorded by the validator then the
+	 * control will be transferred back to the view along with the error messages.
+	 * 
+	 * 4. In case of an adding a new row (new key) request, a new TopicTemplate
+	 * instance will be created and this will be added to the list of topictemplates
+	 * within the Topic.
+	 * 
+	 * 5. If the request is for submitting the form for the creation of new topic
+	 * (and topic templates), then a db call is made to determine if there are any
+	 * existing topics with the same name. If found, the operation will be rejected
+	 * with an bindingResult error and control transferred back to the view. If
+	 * there are no such dups, then the db save call will happen and a new entry
+	 * will be made in topics table and multiple entries will be made (depending on
+	 * the no.of new topic templates) in topic_templates table.
+	 * 
+	 * @param topic
+	 * @param bindingResult
+	 * @param httpServletRequest
+	 * @param model
+	 * @return
+	 */
 	@PostMapping("/addTopic")
 	public String processAddTopic(@Validated @ModelAttribute(name = TOPIC_MODEL_KEY) Topic topic,
 			BindingResult bindingResult, HttpServletRequest httpServletRequest, Model model) {
@@ -218,22 +268,21 @@ public class TopicController {
 			return ADD_TOPIC_VIEW;
 
 		if (httpServletRequest.getParameter("addRow") != null) {
-			System.out.println("about to add row");
 			TopicTemplate tt = new TopicTemplate();
 			topic.getTopicTemplates().add(tt);
 			return ADD_TOPIC_VIEW;
 		} else {
-			System.out.println("topic name:" + topic.getTopicname());
+			LOGGER.debug("topic name:" , topic.getTopicname());
 			List<Topic> topics = this.topicRepo.findByTopicname(topic.getTopicname());
 			if (topics.isEmpty()) {
-				System.out.println("no dups found.");
+				LOGGER.debug("no dups found.");
 				Topic t1 = new Topic(topic.getTopicname(), topic.getTopicTemplates());
 				this.topicRepo.save(t1);
 				model.addAttribute(SUCCESS_MODEL_KEY, "Op. Successful.");
 				return ADD_TOPIC_VIEW;
 			} else {
-				System.out.println("dup found, reject.");
-				bindingResult.reject(DUPLICATE_MSG, new String[] {"Topic"}, null);
+				LOGGER.debug("dup found, reject.");
+				bindingResult.reject(DUPLICATE_MSG, new String[] { "Topic" }, null);
 				return ADD_TOPIC_VIEW;
 			}
 		}

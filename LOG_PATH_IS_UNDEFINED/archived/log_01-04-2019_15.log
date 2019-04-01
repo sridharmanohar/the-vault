@@ -1,0 +1,136 @@
+01-04-2019 16:26:14.681 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration binary -> org.hibernate.type.BinaryType@7e89f7af
+01-04-2019 16:26:14.682 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration byte[] -> org.hibernate.type.BinaryType@7e89f7af
+01-04-2019 16:26:14.682 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration [B -> org.hibernate.type.BinaryType@7e89f7af
+01-04-2019 16:26:14.684 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@21695a38
+01-04-2019 16:26:14.684 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@21695a38
+01-04-2019 16:26:14.684 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@21695a38
+01-04-2019 16:26:14.686 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration row_version -> org.hibernate.type.RowVersionType@e8bb0e2
+01-04-2019 16:26:14.687 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration image -> org.hibernate.type.ImageType@4e538c13
+01-04-2019 16:26:14.689 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration characters -> org.hibernate.type.CharArrayType@b3890ce
+01-04-2019 16:26:14.689 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration char[] -> org.hibernate.type.CharArrayType@b3890ce
+01-04-2019 16:26:14.690 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration [C -> org.hibernate.type.CharArrayType@b3890ce
+01-04-2019 16:26:14.691 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@59f1371f
+01-04-2019 16:26:14.692 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@59f1371f
+01-04-2019 16:26:14.692 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@59f1371f
+01-04-2019 16:26:14.693 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration text -> org.hibernate.type.TextType@5af83d67
+01-04-2019 16:26:14.694 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration ntext -> org.hibernate.type.NTextType@373f3e44
+01-04-2019 16:26:14.696 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration blob -> org.hibernate.type.BlobType@7b330a4f
+01-04-2019 16:26:14.696 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@7b330a4f
+01-04-2019 16:26:14.697 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@46c75102
+01-04-2019 16:26:14.698 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration clob -> org.hibernate.type.ClobType@19aab881
+01-04-2019 16:26:14.698 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@19aab881
+01-04-2019 16:26:14.699 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration nclob -> org.hibernate.type.NClobType@507aeb2b
+01-04-2019 16:26:14.699 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@507aeb2b
+01-04-2019 16:26:14.700 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@5ae41c6b
+01-04-2019 16:26:14.700 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@6fd3d479
+01-04-2019 16:26:14.701 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration serializable -> org.hibernate.type.SerializableType@2444f423
+01-04-2019 16:26:14.704 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration object -> org.hibernate.type.ObjectType@30f65340
+01-04-2019 16:26:14.705 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@30f65340
+01-04-2019 16:26:14.705 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@33d23dcd
+01-04-2019 16:26:14.705 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@31bc04a4
+01-04-2019 16:26:14.706 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@32745ec0
+01-04-2019 16:26:14.706 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@2331cfae
+01-04-2019 16:26:14.706 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@1afb250
+01-04-2019 16:26:14.706 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@50e70fe5
+01-04-2019 16:26:14.706 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@40f5c967
+01-04-2019 16:26:14.707 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@6d943268
+01-04-2019 16:26:14.717 [restartedMain] DEBUG o.h.b.internal.BootstrapContextImpl.injectJpaTempClassLoader - Injecting JPA temp ClassLoader [org.springframework.instrument.classloading.SimpleThrowawayClassLoader@2d1b4382] into BootstrapContext; was [null]
+01-04-2019 16:26:14.718 [restartedMain] DEBUG o.h.b.internal.ClassLoaderAccessImpl.injectTempClassLoader - ClassLoaderAccessImpl#injectTempClassLoader(org.springframework.instrument.classloading.SimpleThrowawayClassLoader@2d1b4382) [was null]
+01-04-2019 16:26:14.718 [restartedMain] DEBUG o.h.b.internal.BootstrapContextImpl.injectScanEnvironment - Injecting ScanEnvironment [org.hibernate.jpa.boot.internal.StandardJpaScanEnvironmentImpl@7ea7e5e0] into BootstrapContext; was [null]
+01-04-2019 16:26:14.719 [restartedMain] DEBUG o.h.b.internal.BootstrapContextImpl.injectScanOptions - Injecting ScanOptions [org.hibernate.boot.archive.scan.internal.StandardScanOptions@957bee5] into BootstrapContext; was [org.hibernate.boot.archive.scan.internal.StandardScanOptions@6e37df90]
+01-04-2019 16:26:14.793 [restartedMain] DEBUG o.h.b.internal.BootstrapContextImpl.injectJpaTempClassLoader - Injecting JPA temp ClassLoader [null] into BootstrapContext; was [org.springframework.instrument.classloading.SimpleThrowawayClassLoader@2d1b4382]
+01-04-2019 16:26:14.794 [restartedMain] DEBUG o.h.b.internal.ClassLoaderAccessImpl.injectTempClassLoader - ClassLoaderAccessImpl#injectTempClassLoader(null) [was org.springframework.instrument.classloading.SimpleThrowawayClassLoader@2d1b4382]
+01-04-2019 16:26:14.806 [restartedMain] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory.register - Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+01-04-2019 16:26:14.807 [restartedMain] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory.register - Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+01-04-2019 16:26:14.809 [restartedMain] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory.register - Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+01-04-2019 16:26:14.809 [restartedMain] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory.register - Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+01-04-2019 16:26:14.810 [restartedMain] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory.register - Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+01-04-2019 16:26:14.812 [restartedMain] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory.register - Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+01-04-2019 16:26:14.813 [restartedMain] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory.register - Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+01-04-2019 16:26:14.816 [restartedMain] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory.register - Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+01-04-2019 16:26:14.818 [restartedMain] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory.register - Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+01-04-2019 16:26:14.819 [restartedMain] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory.register - Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+01-04-2019 16:26:14.821 [restartedMain] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory.register - Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+01-04-2019 16:26:14.822 [restartedMain] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory.register - Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+01-04-2019 16:26:14.822 [restartedMain] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory.register - Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+01-04-2019 16:26:14.824 [restartedMain] DEBUG o.h.i.f.i.DefaultIdentifierGeneratorFactory.register - Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+01-04-2019 16:26:14.836 [restartedMain] DEBUG o.h.e.j.e.i.JdbcEnvironmentInitiator.initiateService - Database ->
+       name : MySQL
+    version : 8.0.15
+      major : 8
+      minor : 0
+01-04-2019 16:26:14.836 [restartedMain] DEBUG o.h.e.j.e.i.JdbcEnvironmentInitiator.initiateService - Driver ->
+       name : MySQL Connector/J
+    version : mysql-connector-java-8.0.15 (Revision: 79a4336f140499bd22dd07f02b708e163844e3d5)
+      major : 8
+      minor : 0
+01-04-2019 16:26:14.837 [restartedMain] DEBUG o.h.e.j.e.i.JdbcEnvironmentInitiator.debugf - JDBC version : 4.2
+01-04-2019 16:26:14.871 [restartedMain] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+01-04-2019 16:26:14.976 [restartedMain] DEBUG o.h.e.j.e.s.IdentifierHelperBuilder.applyIdentifierCasing - JDBC driver metadata reported database stores quoted identifiers in more than one case
+01-04-2019 16:26:14.980 [restartedMain] DEBUG o.h.e.j.e.s.IdentifierHelperBuilder.build - IdentifierCaseStrategy for both quoted and unquoted identifiers was set to the same strategy [MIXED]; that will likely lead to problems in schema update and validation if using quoted identifiers
+01-04-2019 16:26:14.995 [restartedMain] DEBUG o.h.boot.model.relational.Namespace.<init> - Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+01-04-2019 16:26:14.998 [restartedMain] DEBUG o.h.type.spi.TypeConfiguration$Scope.scope - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@62ff2f71] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@148093fb]
+01-04-2019 16:26:15.052 [restartedMain] DEBUG org.hibernate.cfg.AnnotationBinder.bindClass - Binding entity from annotated class: org.vault.model.User
+01-04-2019 16:26:15.084 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+01-04-2019 16:26:15.090 [restartedMain] DEBUG o.h.cfg.annotations.EntityBinder.bindEntity - Import with entity name User
+01-04-2019 16:26:15.094 [restartedMain] DEBUG o.h.cfg.annotations.EntityBinder.bindTable - Bind entity org.vault.model.User on table users
+01-04-2019 16:26:15.119 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=id, insertable=true, updatable=true, unique=false}
+01-04-2019 16:26:15.122 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makePropertyAndValue - MetadataSourceProcessor property id with lazy=false
+01-04-2019 16:26:15.124 [restartedMain] DEBUG o.h.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor - Attempting to locate auto-apply AttributeConverter for property [org.vault.model.User:id]
+01-04-2019 16:26:15.127 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.make - building SimpleValue for id
+01-04-2019 16:26:15.131 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property id
+01-04-2019 16:26:15.135 [restartedMain] DEBUG org.hibernate.cfg.BinderHelper.makeIdGenerator - #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, identity, , ...)
+01-04-2019 16:26:15.136 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=firstname, insertable=true, updatable=true, unique=false}
+01-04-2019 16:26:15.136 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makePropertyAndValue - MetadataSourceProcessor property firstname with lazy=false
+01-04-2019 16:26:15.137 [restartedMain] DEBUG o.h.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor - Attempting to locate auto-apply AttributeConverter for property [org.vault.model.User:firstname]
+01-04-2019 16:26:15.137 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.make - building SimpleValue for firstname
+01-04-2019 16:26:15.138 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property firstname
+01-04-2019 16:26:15.138 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=lastname, insertable=true, updatable=true, unique=false}
+01-04-2019 16:26:15.139 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makePropertyAndValue - MetadataSourceProcessor property lastname with lazy=false
+01-04-2019 16:26:15.139 [restartedMain] DEBUG o.h.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor - Attempting to locate auto-apply AttributeConverter for property [org.vault.model.User:lastname]
+01-04-2019 16:26:15.140 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.make - building SimpleValue for lastname
+01-04-2019 16:26:15.140 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property lastname
+01-04-2019 16:26:15.142 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='user'}
+01-04-2019 16:26:15.143 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=topic_groups, insertable=true, updatable=true, unique=false}
+01-04-2019 16:26:15.146 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=null, insertable=true, updatable=true, unique=false}
+01-04-2019 16:26:15.161 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=element, insertable=true, updatable=true, unique=false}
+01-04-2019 16:26:15.162 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=topic_groups_key, insertable=true, updatable=true, unique=false}
+01-04-2019 16:26:15.164 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='topicGroups_KEY', referencedColumn='null', mappedBy='null'}
+01-04-2019 16:26:15.166 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='user'}
+01-04-2019 16:26:15.167 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='user'}
+01-04-2019 16:26:15.169 [restartedMain] DEBUG o.h.cfg.annotations.CollectionBinder.bind - Collection role: org.vault.model.User.topicGroups
+01-04-2019 16:26:15.173 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property topicGroups
+01-04-2019 16:26:15.175 [restartedMain] DEBUG org.hibernate.cfg.AnnotationBinder.bindClass - Binding entity from annotated class: org.vault.model.TopicGroup
+01-04-2019 16:26:15.175 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+01-04-2019 16:26:15.176 [restartedMain] DEBUG o.h.cfg.annotations.EntityBinder.bindEntity - Import with entity name TopicGroup
+01-04-2019 16:26:15.176 [restartedMain] DEBUG o.h.cfg.annotations.EntityBinder.bindTable - Bind entity org.vault.model.TopicGroup on table topic_groups
+01-04-2019 16:26:15.186 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_groups), mappingColumn=id, insertable=true, updatable=true, unique=false}
+01-04-2019 16:26:15.187 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makePropertyAndValue - MetadataSourceProcessor property id with lazy=false
+01-04-2019 16:26:15.188 [restartedMain] DEBUG o.h.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor - Attempting to locate auto-apply AttributeConverter for property [org.vault.model.TopicGroup:id]
+01-04-2019 16:26:15.188 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.make - building SimpleValue for id
+01-04-2019 16:26:15.188 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property id
+01-04-2019 16:26:15.189 [restartedMain] DEBUG org.hibernate.cfg.BinderHelper.makeIdGenerator - #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, identity, , ...)
+01-04-2019 16:26:15.190 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='topicid', referencedColumn='', mappedBy=''}
+01-04-2019 16:26:15.190 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_groups), mappingColumn=topic, insertable=true, updatable=true, unique=false}
+01-04-2019 16:26:15.193 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property topic
+01-04-2019 16:26:15.194 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='topicGroup'}
+01-04-2019 16:26:15.194 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_groups), mappingColumn=topic_details, insertable=true, updatable=true, unique=false}
+01-04-2019 16:26:15.196 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_groups), mappingColumn=null, insertable=true, updatable=true, unique=false}
+01-04-2019 16:26:15.197 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_groups), mappingColumn=element, insertable=true, updatable=true, unique=false}
+01-04-2019 16:26:15.198 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_groups), mappingColumn=topic_details_key, insertable=true, updatable=true, unique=false}
+01-04-2019 16:26:15.198 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='topicDetails_KEY', referencedColumn='null', mappedBy='null'}
+01-04-2019 16:26:15.199 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='topicGroup'}
+01-04-2019 16:26:15.199 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='topicGroup'}
+01-04-2019 16:26:15.199 [restartedMain] DEBUG o.h.cfg.annotations.CollectionBinder.bind - Collection role: org.vault.model.TopicGroup.topicDetails
+01-04-2019 16:26:15.200 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property topicDetails
+01-04-2019 16:26:15.201 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='userid', referencedColumn='', mappedBy=''}
+01-04-2019 16:26:15.201 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_groups), mappingColumn=user, insertable=true, updatable=true, unique=false}
+01-04-2019 16:26:15.201 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property user
+01-04-2019 16:26:15.202 [restartedMain] DEBUG org.hibernate.cfg.AnnotationBinder.bindClass - Binding entity from annotated class: org.vault.model.TopicDetail
+01-04-2019 16:26:15.202 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+01-04-2019 16:26:15.203 [restartedMain] DEBUG o.h.cfg.annotations.EntityBinder.bindEntity - Import with entity name TopicDetail
+01-04-2019 16:26:15.203 [restartedMain] DEBUG o.h.cfg.annotations.EntityBinder.bindTable - Bind entity org.vault.model.TopicDetail on table topic_details
+01-04-2019 16:26:15.205 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_details), mappingColumn=id, insertable=true, updatable=true, unique=false}
+01-04-2019 16:26:15.205 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makePropertyAndValue - MetadataSourceProcessor property id with lazy=false
+01-04-2019 16:26:15.206 [restartedMain] DEBUG o.h.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor - Attempting to locate auto-apply AttributeConverter for property [org.vault.model.TopicDetail:id]
+01-04-2019 16:26:15.206 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.make - building SimpleValue for id

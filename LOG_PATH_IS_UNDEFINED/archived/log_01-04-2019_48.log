@@ -1,0 +1,128 @@
+01-04-2019 16:28:24.523 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property id
+01-04-2019 16:28:24.528 [restartedMain] DEBUG org.hibernate.cfg.BinderHelper.makeIdGenerator - #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, identity, , ...)
+01-04-2019 16:28:24.529 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_details), mappingColumn=propvalue, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.529 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makePropertyAndValue - MetadataSourceProcessor property propvalue with lazy=false
+01-04-2019 16:28:24.530 [restartedMain] DEBUG o.h.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor - Attempting to locate auto-apply AttributeConverter for property [org.vault.model.TopicDetail:propvalue]
+01-04-2019 16:28:24.530 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.make - building SimpleValue for propvalue
+01-04-2019 16:28:24.530 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property propvalue
+01-04-2019 16:28:24.531 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='topicgrpid', referencedColumn='', mappedBy=''}
+01-04-2019 16:28:24.531 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_details), mappingColumn=topic_group, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.532 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property topicGroup
+01-04-2019 16:28:24.532 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='templateid', referencedColumn='', mappedBy=''}
+01-04-2019 16:28:24.533 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_details), mappingColumn=topic_template, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.533 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property topicTemplate
+01-04-2019 16:28:24.534 [restartedMain] DEBUG org.hibernate.cfg.AnnotationBinder.bindClass - Binding entity from annotated class: org.vault.model.TopicTemplate
+01-04-2019 16:28:24.534 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+01-04-2019 16:28:24.535 [restartedMain] DEBUG o.h.cfg.annotations.EntityBinder.bindEntity - Import with entity name TopicTemplate
+01-04-2019 16:28:24.535 [restartedMain] DEBUG o.h.cfg.annotations.EntityBinder.bindTable - Bind entity org.vault.model.TopicTemplate on table topic_templates
+01-04-2019 16:28:24.537 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_templates), mappingColumn=id, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.538 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makePropertyAndValue - MetadataSourceProcessor property id with lazy=false
+01-04-2019 16:28:24.539 [restartedMain] DEBUG o.h.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor - Attempting to locate auto-apply AttributeConverter for property [org.vault.model.TopicTemplate:id]
+01-04-2019 16:28:24.539 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.make - building SimpleValue for id
+01-04-2019 16:28:24.539 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property id
+01-04-2019 16:28:24.540 [restartedMain] DEBUG org.hibernate.cfg.BinderHelper.makeIdGenerator - #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, identity, , ...)
+01-04-2019 16:28:24.540 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_templates), mappingColumn=propname, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.541 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makePropertyAndValue - MetadataSourceProcessor property propname with lazy=false
+01-04-2019 16:28:24.541 [restartedMain] DEBUG o.h.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor - Attempting to locate auto-apply AttributeConverter for property [org.vault.model.TopicTemplate:propname]
+01-04-2019 16:28:24.541 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.make - building SimpleValue for propname
+01-04-2019 16:28:24.542 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property propname
+01-04-2019 16:28:24.542 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='topicid', referencedColumn='', mappedBy=''}
+01-04-2019 16:28:24.543 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_templates), mappingColumn=topic, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.543 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property topic
+01-04-2019 16:28:24.544 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='topicTemplate'}
+01-04-2019 16:28:24.544 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_templates), mappingColumn=topic_details, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.545 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_templates), mappingColumn=null, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.545 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_templates), mappingColumn=element, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.546 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topic_templates), mappingColumn=topic_details_key, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.546 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='topicDetails_KEY', referencedColumn='null', mappedBy='null'}
+01-04-2019 16:28:24.546 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='topicTemplate'}
+01-04-2019 16:28:24.547 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='topicTemplate'}
+01-04-2019 16:28:24.547 [restartedMain] DEBUG o.h.cfg.annotations.CollectionBinder.bind - Collection role: org.vault.model.TopicTemplate.topicDetails
+01-04-2019 16:28:24.547 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property topicDetails
+01-04-2019 16:28:24.548 [restartedMain] DEBUG org.hibernate.cfg.AnnotationBinder.bindClass - Binding entity from annotated class: org.vault.model.Topic
+01-04-2019 16:28:24.548 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+01-04-2019 16:28:24.549 [restartedMain] DEBUG o.h.cfg.annotations.EntityBinder.bindEntity - Import with entity name Topic
+01-04-2019 16:28:24.549 [restartedMain] DEBUG o.h.cfg.annotations.EntityBinder.bindTable - Bind entity org.vault.model.Topic on table topics
+01-04-2019 16:28:24.551 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topics), mappingColumn=id, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.552 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makePropertyAndValue - MetadataSourceProcessor property id with lazy=false
+01-04-2019 16:28:24.552 [restartedMain] DEBUG o.h.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor - Attempting to locate auto-apply AttributeConverter for property [org.vault.model.Topic:id]
+01-04-2019 16:28:24.553 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.make - building SimpleValue for id
+01-04-2019 16:28:24.553 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property id
+01-04-2019 16:28:24.554 [restartedMain] DEBUG org.hibernate.cfg.BinderHelper.makeIdGenerator - #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, identity, , ...)
+01-04-2019 16:28:24.554 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='topic'}
+01-04-2019 16:28:24.555 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topics), mappingColumn=topic_groups, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.555 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topics), mappingColumn=null, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.556 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topics), mappingColumn=element, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.556 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topics), mappingColumn=topic_groups_key, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.557 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='topicGroups_KEY', referencedColumn='null', mappedBy='null'}
+01-04-2019 16:28:24.557 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='topic'}
+01-04-2019 16:28:24.558 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='topic'}
+01-04-2019 16:28:24.558 [restartedMain] DEBUG o.h.cfg.annotations.CollectionBinder.bind - Collection role: org.vault.model.Topic.topicGroups
+01-04-2019 16:28:24.559 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property topicGroups
+01-04-2019 16:28:24.559 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='topic'}
+01-04-2019 16:28:24.560 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topics), mappingColumn=topic_templates, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.560 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topics), mappingColumn=null, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.561 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topics), mappingColumn=element, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.561 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topics), mappingColumn=topic_templates_key, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.561 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='topicTemplates_KEY', referencedColumn='null', mappedBy='null'}
+01-04-2019 16:28:24.562 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='topic'}
+01-04-2019 16:28:24.562 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='topic'}
+01-04-2019 16:28:24.563 [restartedMain] DEBUG o.h.cfg.annotations.CollectionBinder.bind - Collection role: org.vault.model.Topic.topicTemplates
+01-04-2019 16:28:24.563 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property topicTemplates
+01-04-2019 16:28:24.563 [restartedMain] DEBUG org.hibernate.cfg.Ejb3Column.bind - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(topics), mappingColumn=topicname, insertable=true, updatable=true, unique=false}
+01-04-2019 16:28:24.564 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makePropertyAndValue - MetadataSourceProcessor property topicname with lazy=false
+01-04-2019 16:28:24.564 [restartedMain] DEBUG o.h.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor - Attempting to locate auto-apply AttributeConverter for property [org.vault.model.Topic:topicname]
+01-04-2019 16:28:24.564 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.make - building SimpleValue for topicname
+01-04-2019 16:28:24.565 [restartedMain] DEBUG o.h.cfg.annotations.PropertyBinder.makeProperty - Building property topicname
+01-04-2019 16:28:24.566 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.fillSimpleValue - Starting fillSimpleValue for id
+01-04-2019 16:28:24.567 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.fillSimpleValue - Starting fillSimpleValue for firstname
+01-04-2019 16:28:24.567 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.fillSimpleValue - Starting fillSimpleValue for lastname
+01-04-2019 16:28:24.567 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.fillSimpleValue - Starting fillSimpleValue for id
+01-04-2019 16:28:24.568 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.fillSimpleValue - Starting fillSimpleValue for id
+01-04-2019 16:28:24.568 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.fillSimpleValue - Starting fillSimpleValue for propvalue
+01-04-2019 16:28:24.568 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.fillSimpleValue - Starting fillSimpleValue for id
+01-04-2019 16:28:24.568 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.fillSimpleValue - Starting fillSimpleValue for propname
+01-04-2019 16:28:24.569 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.fillSimpleValue - Starting fillSimpleValue for id
+01-04-2019 16:28:24.569 [restartedMain] DEBUG o.h.c.annotations.SimpleValueBinder.fillSimpleValue - Starting fillSimpleValue for topicname
+01-04-2019 16:28:24.579 [restartedMain] DEBUG org.hibernate.mapping.PrimaryKey.addColumn - Forcing column [id] to be non-null as it is part of the primary key for table [users]
+01-04-2019 16:28:24.580 [restartedMain] DEBUG org.hibernate.mapping.PrimaryKey.addColumn - Forcing column [id] to be non-null as it is part of the primary key for table [topic_groups]
+01-04-2019 16:28:24.580 [restartedMain] DEBUG org.hibernate.mapping.PrimaryKey.addColumn - Forcing column [id] to be non-null as it is part of the primary key for table [topic_details]
+01-04-2019 16:28:24.581 [restartedMain] DEBUG org.hibernate.mapping.PrimaryKey.addColumn - Forcing column [id] to be non-null as it is part of the primary key for table [topic_templates]
+01-04-2019 16:28:24.581 [restartedMain] DEBUG org.hibernate.mapping.PrimaryKey.addColumn - Forcing column [id] to be non-null as it is part of the primary key for table [topics]
+01-04-2019 16:28:24.582 [restartedMain] DEBUG o.hibernate.cfg.CollectionSecondPass.doSecondPass - Second pass for collection: org.vault.model.User.topicGroups
+01-04-2019 16:28:24.583 [restartedMain] DEBUG o.h.cfg.annotations.CollectionBinder.bindOneToManySecondPass - Binding a OneToMany: org.vault.model.User.topicGroups through a foreign key
+01-04-2019 16:28:24.584 [restartedMain] DEBUG o.h.cfg.annotations.CollectionBinder.bindOneToManySecondPass - Mapping collection: org.vault.model.User.topicGroups -> topic_groups
+01-04-2019 16:28:24.586 [restartedMain] DEBUG o.h.cfg.annotations.TableBinder.bindFk - Retrieving property org.vault.model.TopicGroup.user
+01-04-2019 16:28:24.587 [restartedMain] DEBUG o.hibernate.cfg.CollectionSecondPass.doSecondPass - Mapped collection key: userid, one-to-many: org.vault.model.TopicGroup
+01-04-2019 16:28:24.588 [restartedMain] DEBUG o.hibernate.cfg.CollectionSecondPass.doSecondPass - Second pass for collection: org.vault.model.TopicGroup.topicDetails
+01-04-2019 16:28:24.588 [restartedMain] DEBUG o.h.cfg.annotations.CollectionBinder.bindOneToManySecondPass - Binding a OneToMany: org.vault.model.TopicGroup.topicDetails through a foreign key
+01-04-2019 16:28:24.589 [restartedMain] DEBUG o.h.cfg.annotations.CollectionBinder.bindOneToManySecondPass - Mapping collection: org.vault.model.TopicGroup.topicDetails -> topic_details
+01-04-2019 16:28:24.589 [restartedMain] DEBUG o.h.cfg.annotations.TableBinder.bindFk - Retrieving property org.vault.model.TopicDetail.topicGroup
+01-04-2019 16:28:24.590 [restartedMain] DEBUG o.hibernate.cfg.CollectionSecondPass.doSecondPass - Mapped collection key: topicgrpid, one-to-many: org.vault.model.TopicDetail
+01-04-2019 16:28:24.590 [restartedMain] DEBUG o.hibernate.cfg.CollectionSecondPass.doSecondPass - Second pass for collection: org.vault.model.TopicTemplate.topicDetails
+01-04-2019 16:28:24.590 [restartedMain] DEBUG o.h.cfg.annotations.CollectionBinder.bindOneToManySecondPass - Binding a OneToMany: org.vault.model.TopicTemplate.topicDetails through a foreign key
+01-04-2019 16:28:24.591 [restartedMain] DEBUG o.h.cfg.annotations.CollectionBinder.bindOneToManySecondPass - Mapping collection: org.vault.model.TopicTemplate.topicDetails -> topic_details
+01-04-2019 16:28:24.591 [restartedMain] DEBUG o.h.cfg.annotations.TableBinder.bindFk - Retrieving property org.vault.model.TopicDetail.topicTemplate
+01-04-2019 16:28:24.592 [restartedMain] DEBUG o.hibernate.cfg.CollectionSecondPass.doSecondPass - Mapped collection key: templateid, one-to-many: org.vault.model.TopicDetail
+01-04-2019 16:28:24.592 [restartedMain] DEBUG o.hibernate.cfg.CollectionSecondPass.doSecondPass - Second pass for collection: org.vault.model.Topic.topicGroups
+01-04-2019 16:28:24.592 [restartedMain] DEBUG o.h.cfg.annotations.CollectionBinder.bindOneToManySecondPass - Binding a OneToMany: org.vault.model.Topic.topicGroups through a foreign key
+01-04-2019 16:28:24.593 [restartedMain] DEBUG o.h.cfg.annotations.CollectionBinder.bindOneToManySecondPass - Mapping collection: org.vault.model.Topic.topicGroups -> topic_groups
+01-04-2019 16:28:24.593 [restartedMain] DEBUG o.h.cfg.annotations.TableBinder.bindFk - Retrieving property org.vault.model.TopicGroup.topic
+01-04-2019 16:28:24.593 [restartedMain] DEBUG o.hibernate.cfg.CollectionSecondPass.doSecondPass - Mapped collection key: topicid, one-to-many: org.vault.model.TopicGroup
+01-04-2019 16:28:24.593 [restartedMain] DEBUG o.hibernate.cfg.CollectionSecondPass.doSecondPass - Second pass for collection: org.vault.model.Topic.topicTemplates
+01-04-2019 16:28:24.594 [restartedMain] DEBUG o.h.cfg.annotations.CollectionBinder.bindOneToManySecondPass - Binding a OneToMany: org.vault.model.Topic.topicTemplates through a foreign key
+01-04-2019 16:28:24.594 [restartedMain] DEBUG o.h.cfg.annotations.CollectionBinder.bindOneToManySecondPass - Mapping collection: org.vault.model.Topic.topicTemplates -> topic_templates
+01-04-2019 16:28:24.594 [restartedMain] DEBUG o.h.cfg.annotations.TableBinder.bindFk - Retrieving property org.vault.model.TopicTemplate.topic
+01-04-2019 16:28:24.595 [restartedMain] DEBUG o.hibernate.cfg.CollectionSecondPass.doSecondPass - Mapped collection key: topicid, one-to-many: org.vault.model.TopicTemplate
+01-04-2019 16:28:24.595 [restartedMain] DEBUG o.h.b.i.InFlightMetadataCollectorImpl.secondPassCompileForeignKeys - Resolving reference to class: org.vault.model.TopicGroup
+01-04-2019 16:28:24.598 [restartedMain] DEBUG o.h.b.i.InFlightMetadataCollectorImpl.secondPassCompileForeignKeys - Resolving reference to class: org.vault.model.TopicTemplate
+01-04-2019 16:28:24.598 [restartedMain] DEBUG o.h.b.i.InFlightMetadataCollectorImpl.secondPassCompileForeignKeys - Resolving reference to class: org.vault.model.Topic
+01-04-2019 16:28:24.599 [restartedMain] DEBUG o.h.b.i.InFlightMetadataCollectorImpl.secondPassCompileForeignKeys - Resolving reference to class: org.vault.model.User
+01-04-2019 16:28:24.599 [restartedMain] DEBUG o.h.b.i.InFlightMetadataCollectorImpl.secondPassCompileForeignKeys - Resolving reference to class: org.vault.model.Topic
+01-04-2019 16:28:24.601 [restartedMain] DEBUG o.h.b.i.InFlightMetadataCollectorImpl.secondPassCompileForeignKeys - Resolving reference to class: org.vault.model.TopicGroup
+01-04-2019 16:28:24.601 [restartedMain] DEBUG o.h.b.i.InFlightMetadataCollectorImpl.secondPassCompileForeignKeys - Resolving reference to class: org.vault.model.TopicTemplate
+01-04-2019 16:28:24.601 [restartedMain] DEBUG o.h.b.i.InFlightMetadataCollectorImpl.secondPassCompileForeignKeys - Resolving reference to class: org.vault.model.Topic
+01-04-2019 16:28:24.602 [restartedMain] DEBUG o.h.b.i.InFlightMetadataCollectorImpl.secondPassCompileForeignKeys - Resolving reference to class: org.vault.model.User
+01-04-2019 16:28:24.602 [restartedMain] DEBUG o.h.b.i.InFlightMetadataCollectorImpl.secondPassCompileForeignKeys - Resolving reference to class: org.vault.model.Topic
+01-04-2019 16:28:24.640 [restartedMain] DEBUG o.h.internal.SessionFactoryImpl.<init> - Building session factory
+01-04-2019 16:28:24.642 [restartedMain] DEBUG org.hibernate.cfg.Settings.<init> - SessionFactory name : null

@@ -1,0 +1,8 @@
+01-04-2019 16:28:20.517 [restartedMain] DEBUG o.s.d.r.c.RepositoryComponentProvider.scanCandidateComponents - Identified candidate component class: file [/home/sridhar/eclipse-workspace/vault/target/classes/org/vault/repo/UserRepo.class]
+01-04-2019 16:28:20.593 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 89ms. Found 3 repository interfaces.
+01-04-2019 16:28:21.123 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'propertySourcesPlaceholderConfigurer'
+01-04-2019 16:28:21.132 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'emBeanDefinitionRegistrarPostProcessor'
+01-04-2019 16:28:21.141 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+01-04-2019 16:28:21.144 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata'
+01-04-2019 16:28:21.144 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'preserveErrorControllerTargetClassPostProcessor'
+01-04-2019 16:28:21.145 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.boot.devtools.autoconfigure.DevToolsDataSourceAutoConfiguration$DatabaseShutdownExecutorJpaDependencyConfiguration'

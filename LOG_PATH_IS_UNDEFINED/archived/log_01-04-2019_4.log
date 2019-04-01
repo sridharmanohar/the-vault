@@ -1,0 +1,8 @@
+01-04-2019 16:26:11.940 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+01-04-2019 16:26:11.941 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory'
+01-04-2019 16:26:11.966 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+01-04-2019 16:26:11.967 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+01-04-2019 16:26:11.972 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+01-04-2019 16:26:11.972 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
+01-04-2019 16:26:11.977 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'methodValidationPostProcessor'
+01-04-2019 16:26:11.998 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.createArgumentArray - Autowiring by type from bean name 'methodValidationPostProcessor' via factory method to bean named 'environment'

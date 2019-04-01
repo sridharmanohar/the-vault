@@ -1,0 +1,33 @@
+01-04-2019 16:26:13.481 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'hikariPoolDataSourceMetadataProvider'
+01-04-2019 16:26:13.482 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration'
+01-04-2019 16:26:13.503 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'entityManagerFactoryBuilder'
+01-04-2019 16:26:13.505 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'jpaVendorAdapter'
+01-04-2019 16:26:13.541 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.createArgumentArray - Autowiring by type from bean name 'entityManagerFactoryBuilder' via factory method to bean named 'jpaVendorAdapter'
+01-04-2019 16:26:13.547 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.createArgumentArray - Autowiring by type from bean name 'entityManagerFactory' via factory method to bean named 'entityManagerFactoryBuilder'
+01-04-2019 16:26:13.564 [restartedMain] DEBUG o.s.jdbc.datasource.DataSourceUtils.doGetConnection - Fetching JDBC Connection from DataSource
+01-04-2019 16:26:13.565 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+01-04-2019 16:26:14.129 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+01-04-2019 16:26:14.175 [restartedMain] DEBUG o.s.o.j.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default'
+01-04-2019 16:26:14.191 [restartedMain] DEBUG o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - PersistenceUnitInfo [
+	name: default
+	persistence provider classname: null
+	classloader: org.springframework.boot.devtools.restart.classloader.RestartClassLoader@68bf1353
+	excludeUnlistedClasses: true
+	JTA datasource: null
+	Non JTA datasource: HikariDataSource (HikariPool-1)
+	Transaction type: RESOURCE_LOCAL
+	PU root URL: file:/home/sridhar/eclipse-workspace/vault/target/classes/
+	Shared Cache Mode: UNSPECIFIED
+	Validation Mode: AUTO
+	Jar files URLs []
+	Managed classes names [
+		org.vault.model.Topic
+		org.vault.model.TopicDetail
+		org.vault.model.TopicGroup
+		org.vault.model.TopicTemplate
+		org.vault.model.User]
+	Mapping files names []
+	Properties []
+01-04-2019 16:26:14.205 [restartedMain] DEBUG o.h.i.internal.IntegratorServiceImpl.addIntegrator - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+01-04-2019 16:26:14.208 [restartedMain] DEBUG o.h.i.internal.IntegratorServiceImpl.addIntegrator - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+01-04-2019 16:26:14.212 [restartedMain] DEBUG o.h.i.internal.IntegratorServiceImpl.addIntegrator - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].

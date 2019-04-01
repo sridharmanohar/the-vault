@@ -19,15 +19,38 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 /**
- * The persistent class for the topic_groups database table. This is a critical
- * table which basically contains the topic id and user id.
+ * 1. The persistent class for the topic_groups database table. This is a
+ * critical table which basically contains the topic id and user id.
  * 
- * Consider a system with 2 Users - A and B and 3 Topics - 1, 2 and 3. If User A
- * is associated with 2 instances of Topic 1 (for instance If topic 1 is Email
- * and User has multiple email addresses) then this table will have two entries
- * of Topic 1 associated with User A. And the primary key of this table (i.e.
- * topic group id) will be stored in the Topic Details table which will tell us
- * which Email key-Value pairs belong to which entry of Topic-User group.
+ * 2. Consider a system with 2 Users - A and B and 3 Topics - 1, 2 and 3. If
+ * User A is associated with 2 instances of Topic 1 (for instance If topic 1 is
+ * Email and User has multiple email addresses) then this table will have two
+ * entries of Topic 1 associated with User A. And the primary key of this table
+ * (i.e. topic group id) will be stored in the Topic Details table which will
+ * tell us which Email key-Value pairs belong to which entry of Topic-User
+ * group.
+ * 
+ * 3. This table contains the topic id and the user id.
+ * 
+ * 4. The overloaded constructor with 4 args. is used while making an update to
+ * the user secrets (i.e. updates to topic and topic_details) where it becomes
+ * mandatory to supply the details of topic_groups also because of the
+ * relationship (even though there are no actual updates to the topic_groups
+ * table).
+ * 
+ * 5. The overloaded constructor with 3 args. is used while creating a new user
+ * secret, when it becomes necessary to make the new grouping mapping into this
+ * table as well.
+ * 
+ * 6. The addTopicDetails method is added to solve the problem where
+ * parent(topic_groups) and child(topic_details) are to be inserted in one go
+ * i.e. first an entry is made into topic_groups and using this pk an entry is
+ * made into topic_details. If you do not map the child instances to the parent,
+ * while inserting into child, the pk of the parent will not be found. This
+ * happens while adding a new User Secret where you will have to make an entry
+ * into the topic_groups table and also into the topic_details table at the same
+ * time and to make an insert into topic_details table you need the pk of the
+ * topic_groups table which just inserted.
  * 
  */
 @Entity

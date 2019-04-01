@@ -1,0 +1,44 @@
+01-04-2019 16:28:26.670 [restartedMain] DEBUG o.s.d.r.c.s.RepositoryFactorySupport.getRepository - Finished creation of repository instance for org.vault.repo.TopicRepo.
+01-04-2019 16:28:26.677 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'userController'
+01-04-2019 16:28:26.681 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'userRepo'
+01-04-2019 16:28:26.689 [restartedMain] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke - Creating new EntityManager for shared EntityManager invocation
+01-04-2019 16:28:26.689 [restartedMain] INFO  o.h.e.i.StatisticalLoggingSessionEventListener.end - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+01-04-2019 16:28:26.690 [restartedMain] DEBUG o.s.d.r.c.s.RepositoryFactorySupport.getRepository - Initializing repository instance for org.vault.repo.UserRepo…
+01-04-2019 16:28:26.692 [restartedMain] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke - Creating new EntityManager for shared EntityManager invocation
+01-04-2019 16:28:26.692 [restartedMain] INFO  o.h.e.i.StatisticalLoggingSessionEventListener.end - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+01-04-2019 16:28:26.694 [restartedMain] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke - Creating new EntityManager for shared EntityManager invocation
+01-04-2019 16:28:26.695 [restartedMain] INFO  o.h.e.i.StatisticalLoggingSessionEventListener.end - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+01-04-2019 16:28:26.698 [restartedMain] DEBUG o.s.d.j.r.query.JpaQueryFactory.fromQueryAnnotation - Looking up query for method findByFirstnameAndLastname

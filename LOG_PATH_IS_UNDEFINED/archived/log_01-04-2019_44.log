@@ -1,0 +1,16 @@
+01-04-2019 16:28:23.985 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration short -> org.hibernate.type.ShortType@513a3a37
+01-04-2019 16:28:23.986 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration short -> org.hibernate.type.ShortType@513a3a37
+01-04-2019 16:28:23.987 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@513a3a37
+01-04-2019 16:28:23.996 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration integer -> org.hibernate.type.IntegerType@3ba97ff1
+01-04-2019 16:28:23.997 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration int -> org.hibernate.type.IntegerType@3ba97ff1
+01-04-2019 16:28:23.997 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@3ba97ff1
+01-04-2019 16:28:23.999 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration long -> org.hibernate.type.LongType@1130264b
+01-04-2019 16:28:24.000 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration long -> org.hibernate.type.LongType@1130264b
+01-04-2019 16:28:24.000 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration java.lang.Long -> org.hibernate.type.LongType@1130264b
+01-04-2019 16:28:24.003 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration float -> org.hibernate.type.FloatType@5e72d0fe
+01-04-2019 16:28:24.004 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration float -> org.hibernate.type.FloatType@5e72d0fe
+01-04-2019 16:28:24.004 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@5e72d0fe
+01-04-2019 16:28:24.006 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration double -> org.hibernate.type.DoubleType@4c53e372
+01-04-2019 16:28:24.006 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration double -> org.hibernate.type.DoubleType@4c53e372
+01-04-2019 16:28:24.007 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@4c53e372
+01-04-2019 16:28:24.009 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@510b4750

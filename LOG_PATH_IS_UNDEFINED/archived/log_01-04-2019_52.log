@@ -1,0 +1,145 @@
+01-04-2019 16:28:25.696 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topic
+01-04-2019 16:28:25.696 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@331d269a]
+01-04-2019 16:28:25.697 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topic.topicGroups
+01-04-2019 16:28:25.697 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Property path deemed to be circular : topic.topicGroups
+01-04-2019 16:28:25.697 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topic.topicTemplates
+01-04-2019 16:28:25.698 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@3df9d0de]
+01-04-2019 16:28:25.698 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@481a34bd]
+01-04-2019 16:28:25.698 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topic.topicname
+01-04-2019 16:28:25.699 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicDetails
+01-04-2019 16:28:25.700 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:5> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@1269f2d2]
+01-04-2019 16:28:25.700 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:6> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1893f4e1]
+01-04-2019 16:28:25.701 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : user
+01-04-2019 16:28:25.701 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Property path deemed to be circular : user
+01-04-2019 16:28:25.702 [restartedMain] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan - Building LoadPlan...
+01-04-2019 16:28:25.702 [restartedMain] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins - processing queryspace <gen:0>
+01-04-2019 16:28:25.704 [restartedMain] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter.logTree - LoadPlan(collection=org.vault.model.User.topicGroups)
+    - Returns
+       - CollectionReturnImpl(collection=org.vault.model.User.topicGroups, querySpaceUid=<gen:0>, path=[org.vault.model.User.topicGroups])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=org.vault.model.TopicGroup, querySpaceUid=<gen:1>, path=[org.vault.model.User.topicGroups].<elements>)
+             - EntityAttributeFetchImpl(entity=org.vault.model.Topic, querySpaceUid=<gen:2>, path=[org.vault.model.User.topicGroups].<elements>.topic)
+                - CollectionAttributeFetchImpl(collection=org.vault.model.Topic.topicTemplates, querySpaceUid=<gen:3>, path=[org.vault.model.User.topicGroups].<elements>.topic.topicTemplates)
+                   - (collection element) CollectionFetchableElementEntityGraph(entity=org.vault.model.TopicTemplate, querySpaceUid=<gen:4>, path=[org.vault.model.User.topicGroups].<elements>.topic.topicTemplates.<elements>)
+             - CollectionAttributeFetchImpl(collection=org.vault.model.TopicGroup.topicDetails, querySpaceUid=<gen:5>, path=[org.vault.model.User.topicGroups].<elements>.topicDetails)
+                - (collection element) CollectionFetchableElementEntityGraph(entity=org.vault.model.TopicDetail, querySpaceUid=<gen:6>, path=[org.vault.model.User.topicGroups].<elements>.topicDetails.<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=org.vault.model.User.topicGroups)
+          - SQL table alias mapping - topicgroup0_
+          - alias suffix - 0_
+          - suffixed key columns - {userid3_1_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - id1_1_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=org.vault.model.TopicGroup)
+                - SQL table alias mapping - topicgroup0_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_1_1_}
+                - JOIN (JoinDefinedByMetadata(topic)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=org.vault.model.Topic)
+                      - SQL table alias mapping - topic1_
+                      - alias suffix - 2_
+                      - suffixed key columns - {id1_3_2_}
+
+01-04-2019 16:28:25.704 [restartedMain] DEBUG o.h.l.c.plan.CollectionLoader.<init> - Static select for collection org.vault.model.User.topicGroups: select topicgroup0_.userid as userid3_1_0_, topicgroup0_.id as id1_1_0_, topicgroup0_.id as id1_1_1_, topicgroup0_.topicid as topicid2_1_1_, topicgroup0_.userid as userid3_1_1_, topic1_.id as id1_3_2_, topic1_.topicname as topicnam2_3_2_ from topic_groups topicgroup0_ left outer join topics topic1_ on topicgroup0_.topicid=topic1_.id where topicgroup0_.userid=?
+01-04-2019 16:28:25.758 [restartedMain] DEBUG o.h.t.s.s.SchemaManagementToolCoordinator.process - No actions specified; doing nothing
+01-04-2019 16:28:25.759 [restartedMain] DEBUG o.h.query.spi.NamedQueryRepository.checkNamedQueries - Checking 0 named HQL queries
+01-04-2019 16:28:25.760 [restartedMain] DEBUG o.h.query.spi.NamedQueryRepository.checkNamedQueries - Checking 0 named SQL queries
+01-04-2019 16:28:25.762 [restartedMain] DEBUG o.h.internal.SessionFactoryRegistry.<init> - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@5682db28
+01-04-2019 16:28:25.762 [restartedMain] DEBUG o.h.internal.SessionFactoryRegistry.addSessionFactory - Registering SessionFactory: 75532d86-1813-44b6-b393-e6c0522c0c2a (<unnamed>)
+01-04-2019 16:28:25.763 [restartedMain] DEBUG o.h.internal.SessionFactoryRegistry.addSessionFactory - Not binding SessionFactory to JNDI, no JNDI name configured
+01-04-2019 16:28:25.763 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+01-04-2019 16:28:25.769 [restartedMain] DEBUG o.s.jdbc.datasource.DataSourceUtils.doGetConnection - Fetching JDBC Connection from DataSource
+01-04-2019 16:28:25.771 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'vaultMain'
+01-04-2019 16:28:25.775 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'topicController'
+01-04-2019 16:28:25.786 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'topicRepo'
+01-04-2019 16:28:25.899 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'jpaMappingContext'
+01-04-2019 16:28:25.901 [restartedMain] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean.createInstance - Initializing JpaMetamodelMappingContext…
+01-04-2019 16:28:25.920 [restartedMain] DEBUG o.s.d.j.r.c.JpaMetamodelMappingContextFactoryBean.createInstance - Finished initializing JpaMetamodelMappingContext!
+01-04-2019 16:28:25.940 [restartedMain] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke - Creating new EntityManager for shared EntityManager invocation
+01-04-2019 16:28:26.117 [restartedMain] DEBUG o.h.s.internal.StatisticsInitiator.initiateServiceInternal - Statistics initialized [enabled=true]
+01-04-2019 16:28:26.129 [restartedMain] INFO  o.h.e.i.StatisticalLoggingSessionEventListener.end - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+01-04-2019 16:28:26.132 [restartedMain] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke - Creating new EntityManager for shared EntityManager invocation
+01-04-2019 16:28:26.132 [restartedMain] INFO  o.h.e.i.StatisticalLoggingSessionEventListener.end - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+01-04-2019 16:28:26.157 [restartedMain] DEBUG o.s.beans.CachedIntrospectionResults.forClass - Not strongly caching class [org.vault.model.Topic] because it is not cache-safe
+01-04-2019 16:28:26.201 [restartedMain] DEBUG o.s.beans.CachedIntrospectionResults.forClass - Not strongly caching class [org.vault.model.TopicGroup] because it is not cache-safe
+01-04-2019 16:28:26.208 [restartedMain] DEBUG o.s.beans.CachedIntrospectionResults.forClass - Not strongly caching class [org.vault.model.TopicDetail] because it is not cache-safe
+01-04-2019 16:28:26.217 [restartedMain] DEBUG o.s.beans.CachedIntrospectionResults.forClass - Not strongly caching class [org.vault.model.TopicTemplate] because it is not cache-safe
+01-04-2019 16:28:26.232 [restartedMain] DEBUG o.s.beans.CachedIntrospectionResults.forClass - Not strongly caching class [org.vault.model.User] because it is not cache-safe
+01-04-2019 16:28:26.239 [restartedMain] DEBUG o.s.d.r.c.s.RepositoryFactorySupport.getRepository - Initializing repository instance for org.vault.repo.TopicRepo…
+01-04-2019 16:28:26.265 [restartedMain] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke - Creating new EntityManager for shared EntityManager invocation
+01-04-2019 16:28:26.265 [restartedMain] INFO  o.h.e.i.StatisticalLoggingSessionEventListener.end - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+01-04-2019 16:28:26.307 [restartedMain] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke - Creating new EntityManager for shared EntityManager invocation
+01-04-2019 16:28:26.307 [restartedMain] INFO  o.h.e.i.StatisticalLoggingSessionEventListener.end - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+01-04-2019 16:28:26.339 [restartedMain] DEBUG o.s.d.j.r.query.JpaQueryFactory.fromQueryAnnotation - Looking up query for method findByTopicname
+01-04-2019 16:28:26.344 [restartedMain] DEBUG o.s.d.j.repository.query.NamedQuery.lookupFrom - Looking up named query Topic.findByTopicname
+01-04-2019 16:28:26.346 [restartedMain] DEBUG o.h.e.t.internal.TransactionImpl.<init> - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+01-04-2019 16:28:26.346 [restartedMain] DEBUG o.s.d.j.repository.query.NamedQuery.hasNamedQuery - Did not find named query Topic.findByTopicname
+01-04-2019 16:28:26.347 [restartedMain] INFO  o.h.e.i.StatisticalLoggingSessionEventListener.end - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+01-04-2019 16:28:26.350 [restartedMain] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke - Creating new EntityManager for shared EntityManager invocation
+01-04-2019 16:28:26.351 [restartedMain] INFO  o.h.e.i.StatisticalLoggingSessionEventListener.end - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}

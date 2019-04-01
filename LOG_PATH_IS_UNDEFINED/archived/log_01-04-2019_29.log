@@ -1,0 +1,9 @@
+01-04-2019 16:28:11.685 [Thread-9] DEBUG o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.doClose - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2626a661, started on Mon Apr 01 16:26:09 IST 2019
+01-04-2019 16:28:11.695 [Thread-9] DEBUG o.s.j.e.a.AnnotationMBeanExporter.destroy - Unregistering JMX-exposed beans on shutdown
+01-04-2019 16:28:11.696 [Thread-9] DEBUG o.s.j.e.a.AnnotationMBeanExporter.unregisterBeans - Unregistering JMX-exposed beans
+01-04-2019 16:28:11.697 [Thread-9] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+01-04-2019 16:28:11.699 [Thread-9] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+01-04-2019 16:28:11.699 [Thread-9] DEBUG o.h.internal.SessionFactoryImpl.close - HHH000031: Closing
+01-04-2019 16:28:11.699 [Thread-9] DEBUG o.h.type.spi.TypeConfiguration$Scope.unsetSessionFactory - Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@578d653a] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@c8d01c3]
+01-04-2019 16:28:11.701 [Thread-9] DEBUG o.h.s.i.AbstractServiceRegistryImpl.deRegisterChild - Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
+01-04-2019 16:28:11.701 [Thread-9] DEBUG o.h.b.r.i.BootstrapServiceRegistryImpl.deRegisterChild - Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries

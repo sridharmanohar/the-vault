@@ -1,0 +1,119 @@
+01-04-2019 16:26:17.333 [restartedMain] DEBUG o.s.d.j.repository.query.NamedQuery.lookupFrom - Looking up named query User.findByFirstnameAndLastname
+01-04-2019 16:26:17.334 [restartedMain] DEBUG o.h.e.t.internal.TransactionImpl.<init> - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+01-04-2019 16:26:17.334 [restartedMain] DEBUG o.s.d.j.repository.query.NamedQuery.hasNamedQuery - Did not find named query User.findByFirstnameAndLastname
+01-04-2019 16:26:17.335 [restartedMain] INFO  o.h.e.i.StatisticalLoggingSessionEventListener.end - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+01-04-2019 16:26:17.335 [restartedMain] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke - Creating new EntityManager for shared EntityManager invocation
+01-04-2019 16:26:17.336 [restartedMain] INFO  o.h.e.i.StatisticalLoggingSessionEventListener.end - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+01-04-2019 16:26:17.341 [restartedMain] DEBUG o.s.d.r.c.s.RepositoryFactorySupport.getRepository - Finished creation of repository instance for org.vault.repo.UserRepo.
+01-04-2019 16:26:17.342 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'topicGroupRepo'
+01-04-2019 16:26:17.348 [restartedMain] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke - Creating new EntityManager for shared EntityManager invocation
+01-04-2019 16:26:17.349 [restartedMain] INFO  o.h.e.i.StatisticalLoggingSessionEventListener.end - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+01-04-2019 16:26:17.350 [restartedMain] DEBUG o.s.d.r.c.s.RepositoryFactorySupport.getRepository - Initializing repository instance for org.vault.repo.TopicGroupRepo…
+01-04-2019 16:26:17.351 [restartedMain] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke - Creating new EntityManager for shared EntityManager invocation
+01-04-2019 16:26:17.352 [restartedMain] INFO  o.h.e.i.StatisticalLoggingSessionEventListener.end - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+01-04-2019 16:26:17.353 [restartedMain] DEBUG o.s.o.j.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke - Creating new EntityManager for shared EntityManager invocation
+01-04-2019 16:26:17.354 [restartedMain] INFO  o.h.e.i.StatisticalLoggingSessionEventListener.end - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+01-04-2019 16:26:17.358 [restartedMain] DEBUG o.s.d.r.c.s.RepositoryFactorySupport.getRepository - Finished creation of repository instance for org.vault.repo.TopicGroupRepo.
+01-04-2019 16:26:17.360 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'topicValidator'
+01-04-2019 16:26:17.362 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'userValidator'
+01-04-2019 16:26:17.363 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration'
+01-04-2019 16:26:17.365 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration'
+01-04-2019 16:26:17.366 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration'
+01-04-2019 16:26:17.367 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration'
+01-04-2019 16:26:17.368 [restartedMain] DEBUG o.s.c.LocalVariableTableParameterNameDiscoverer.inspectClass - Cannot find '.class' file for class [class org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration$$EnhancerBySpringCGLIB$$f6b51f15] - unable to determine constructor/method parameter names
+01-04-2019 16:26:17.370 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
+01-04-2019 16:26:17.373 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.createArgumentArray - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration' via constructor to bean named 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
+01-04-2019 16:26:17.374 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'taskExecutorBuilder'
+01-04-2019 16:26:17.383 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration'
+01-04-2019 16:26:17.384 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'defaultValidator'
+01-04-2019 16:26:17.388 [restartedMain] DEBUG o.h.v.i.e.r.TraversableResolvers.getDefault - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+01-04-2019 16:26:17.389 [restartedMain] DEBUG o.h.v.i.e.r.TraversableResolvers.getDefault - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+01-04-2019 16:26:17.389 [restartedMain] DEBUG o.h.v.m.ResourceBundleMessageInterpolator.buildExpressionFactory - Loaded expression factory via original TCCL
+01-04-2019 16:26:17.391 [restartedMain] DEBUG o.h.v.i.e.r.TraversableResolvers.getDefault - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+01-04-2019 16:26:17.392 [restartedMain] DEBUG o.h.v.i.e.r.TraversableResolvers.getDefault - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+01-04-2019 16:26:17.392 [restartedMain] DEBUG o.h.v.i.engine.ConfigurationImpl.messageInterpolator - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+01-04-2019 16:26:17.393 [restartedMain] DEBUG o.h.v.i.engine.ConfigurationImpl.constraintValidatorFactory - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+01-04-2019 16:26:17.393 [restartedMain] DEBUG o.h.v.i.engine.ConfigurationImpl.parameterNameProvider - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+01-04-2019 16:26:17.395 [restartedMain] DEBUG o.h.v.i.x.config.ValidationXmlParser.getValidationXmlInputStream - Trying to load META-INF/validation.xml for XML based Validator configuration.
+01-04-2019 16:26:17.395 [restartedMain] DEBUG o.h.v.i.x.c.ResourceLoaderHelper.getResettableInputStreamForPath - Trying to load META-INF/validation.xml via user class loader
+01-04-2019 16:26:17.396 [restartedMain] DEBUG o.h.v.i.x.c.ResourceLoaderHelper.getResettableInputStreamForPath - Trying to load META-INF/validation.xml via TCCL
+01-04-2019 16:26:17.396 [restartedMain] DEBUG o.h.v.i.x.c.ResourceLoaderHelper.getResettableInputStreamForPath - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+01-04-2019 16:26:17.396 [restartedMain] DEBUG o.h.v.i.x.config.ValidationXmlParser.getValidationXmlInputStream - No META-INF/validation.xml found. Using annotation based configuration only.
+01-04-2019 16:26:17.401 [restartedMain] DEBUG o.h.v.i.engine.ValidatorFactoryImpl.logValidatorFactoryScopedConfiguration - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+01-04-2019 16:26:17.401 [restartedMain] DEBUG o.h.v.i.engine.ValidatorFactoryImpl.logValidatorFactoryScopedConfiguration - HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+01-04-2019 16:26:17.401 [restartedMain] DEBUG o.h.v.i.engine.ValidatorFactoryImpl.logValidatorFactoryScopedConfiguration - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+01-04-2019 16:26:17.401 [restartedMain] DEBUG o.h.v.i.engine.ValidatorFactoryImpl.logValidatorFactoryScopedConfiguration - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+01-04-2019 16:26:17.401 [restartedMain] DEBUG o.h.v.i.engine.ValidatorFactoryImpl.logValidatorFactoryScopedConfiguration - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+01-04-2019 16:26:17.404 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration'
+01-04-2019 16:26:17.406 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'error'
+01-04-2019 16:26:17.410 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'beanNameViewResolver'
+01-04-2019 16:26:17.413 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'errorAttributes'
+01-04-2019 16:26:17.415 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'basicErrorController'
+01-04-2019 16:26:17.417 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.createArgumentArray - Autowiring by type from bean name 'basicErrorController' via factory method to bean named 'errorAttributes'
+01-04-2019 16:26:17.421 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration'
+01-04-2019 16:26:17.422 [restartedMain] DEBUG o.s.c.LocalVariableTableParameterNameDiscoverer.inspectClass - Cannot find '.class' file for class [class org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration$$EnhancerBySpringCGLIB$$3443a9ea] - unable to determine constructor/method parameter names
+01-04-2019 16:26:17.423 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.createArgumentArray - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
+01-04-2019 16:26:17.424 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'faviconHandlerMapping'
+01-04-2019 16:26:17.433 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'faviconRequestHandler'
+01-04-2019 16:26:17.464 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping.registerHandlers - Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+01-04-2019 16:26:17.468 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration'
+01-04-2019 16:26:17.468 [restartedMain] DEBUG o.s.c.LocalVariableTableParameterNameDiscoverer.inspectClass - Cannot find '.class' file for class [class org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration$$EnhancerBySpringCGLIB$$d602d6bf] - unable to determine constructor/method parameter names
+01-04-2019 16:26:17.470 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.createArgumentArray - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@41275e7e'
+01-04-2019 16:26:17.491 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter'
+01-04-2019 16:26:17.492 [restartedMain] DEBUG o.s.c.LocalVariableTableParameterNameDiscoverer.inspectClass - Cannot find '.class' file for class [class org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$$EnhancerBySpringCGLIB$$7806a1a4] - unable to determine constructor/method parameter names
+01-04-2019 16:26:17.494 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.createArgumentArray - Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'

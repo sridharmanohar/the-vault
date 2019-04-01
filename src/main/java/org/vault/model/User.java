@@ -2,10 +2,7 @@ package org.vault.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -16,27 +13,28 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
 /**
- * The persistent class for the users database table.
+ * 1. The persistent class for the users database table.
+ * 
+ * 2. This table contains the user firstname and lastname.
  * 
  */
 @Entity
-@Table(name="users")
+@Table(name = "users")
 //@NamedQuery(name="User.findAll", query="SELECT u FROM User u")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	private String firstname;
 
 	private String lastname;
 
-	//bi-directional many-to-one association to TopicGroup
-	@OneToMany(mappedBy="user", fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	// bi-directional many-to-one association to TopicGroup
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<TopicGroup> topicGroups = new ArrayList<TopicGroup>();
 
 	public User() {
@@ -51,7 +49,7 @@ public class User implements Serializable {
 	}
 
 	public void setId(int id) {
-		System.out.println("val being set:"+id);
+		System.out.println("val being set:" + id);
 		this.id = id;
 	}
 
@@ -93,15 +91,4 @@ public class User implements Serializable {
 
 		return topicGroup;
 	}
-	
-//	public List<TopicGroup> getTopicGroupsAsList() {
-//		System.out.println("in get");
-//		return new ArrayList<TopicGroup>(topicGroups);
-//	}
-//
-//	public void setTopicGroupsAsList(List<TopicGroup> topicGroups) {
-//		System.out.println("in set");
-//		System.out.println("size:"+topicGroups.size());
-//		this.topicGroups = topicGroups.stream().collect(Collectors.toSet());
-//	}
 }

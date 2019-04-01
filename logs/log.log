@@ -1,0 +1,24 @@
+01-04-2019 18:48:21.798 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool.logPoolState - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+01-04-2019 18:48:42.515 [Thread-15] DEBUG o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.doClose - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5f764779, started on Mon Apr 01 18:47:20 IST 2019
+01-04-2019 18:48:42.522 [Thread-15] DEBUG o.s.j.e.a.AnnotationMBeanExporter.destroy - Unregistering JMX-exposed beans on shutdown
+01-04-2019 18:48:42.533 [Thread-15] DEBUG o.s.j.e.a.AnnotationMBeanExporter.unregisterBeans - Unregistering JMX-exposed beans
+01-04-2019 18:48:42.535 [Thread-15] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+01-04-2019 18:48:42.537 [Thread-15] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+01-04-2019 18:48:42.537 [Thread-15] DEBUG o.h.internal.SessionFactoryImpl.close - HHH000031: Closing
+01-04-2019 18:48:42.538 [Thread-15] DEBUG o.h.type.spi.TypeConfiguration$Scope.unsetSessionFactory - Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@4a036d03] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@4cd98b90]
+01-04-2019 18:48:42.539 [Thread-15] DEBUG o.h.s.i.AbstractServiceRegistryImpl.deRegisterChild - Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
+01-04-2019 18:48:42.540 [Thread-15] DEBUG o.h.b.r.i.BootstrapServiceRegistryImpl.deRegisterChild - Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries
+01-04-2019 18:48:42.541 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown initiated...
+01-04-2019 18:48:42.541 [Thread-15] DEBUG com.zaxxer.hikari.pool.HikariPool.logPoolState - HikariPool-2 - Before shutdown stats (total=10, active=0, idle=10, waiting=0)
+01-04-2019 18:48:42.548 [HikariPool-2 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection - HikariPool-2 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@27c08afb: (connection evicted)
+01-04-2019 18:48:42.550 [HikariPool-2 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection - HikariPool-2 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@3daf2e57: (connection evicted)
+01-04-2019 18:48:42.551 [HikariPool-2 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection - HikariPool-2 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@75deabc9: (connection evicted)
+01-04-2019 18:48:42.551 [HikariPool-2 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection - HikariPool-2 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@d064f78: (connection evicted)
+01-04-2019 18:48:42.552 [HikariPool-2 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection - HikariPool-2 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@1500d228: (connection evicted)
+01-04-2019 18:48:42.553 [HikariPool-2 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection - HikariPool-2 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@3ab628ac: (connection evicted)
+01-04-2019 18:48:42.554 [HikariPool-2 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection - HikariPool-2 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@2d712d07: (connection evicted)
+01-04-2019 18:48:42.555 [HikariPool-2 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection - HikariPool-2 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@7a910f32: (connection evicted)
+01-04-2019 18:48:42.555 [HikariPool-2 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection - HikariPool-2 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@37922091: (connection evicted)
+01-04-2019 18:48:42.565 [HikariPool-2 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection - HikariPool-2 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@790a8c35: (connection evicted)
+01-04-2019 18:48:42.567 [Thread-15] DEBUG com.zaxxer.hikari.pool.HikariPool.logPoolState - HikariPool-2 - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+01-04-2019 18:48:42.568 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown completed.

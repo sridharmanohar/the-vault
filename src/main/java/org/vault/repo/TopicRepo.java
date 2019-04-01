@@ -2,8 +2,6 @@ package org.vault.repo;
 
 import java.util.List;
 
-import java.util.Set;
-
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.repository.Repository;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,0 +1,10 @@
+01-04-2019 16:26:14.296 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.3.7.Final}
+01-04-2019 16:26:14.299 [restartedMain] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000206: hibernate.properties not found
+01-04-2019 16:26:14.521 [restartedMain] DEBUG o.h.service.spi.ServiceBinding.setService - Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+01-04-2019 16:26:14.549 [restartedMain] DEBUG o.h.c.i.RegionFactoryInitiator.resolveRegionFactory - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+01-04-2019 16:26:14.550 [restartedMain] DEBUG o.h.c.i.RegionFactoryInitiator.initiateService - Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+01-04-2019 16:26:14.564 [restartedMain] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+01-04-2019 16:26:14.594 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration boolean -> org.hibernate.type.BooleanType@5ba02f79
+01-04-2019 16:26:14.595 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration boolean -> org.hibernate.type.BooleanType@5ba02f79
+01-04-2019 16:26:14.595 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@5ba02f79
+01-04-2019 16:26:14.596 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@1a06537

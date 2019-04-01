@@ -1,0 +1,25 @@
+01-04-2019 16:28:23.458 [restartedMain] DEBUG o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - PersistenceUnitInfo [
+	name: default
+	persistence provider classname: null
+	classloader: org.springframework.boot.devtools.restart.classloader.RestartClassLoader@68bf1353
+	excludeUnlistedClasses: true
+	JTA datasource: null
+	Non JTA datasource: HikariDataSource (HikariPool-1)
+	Transaction type: RESOURCE_LOCAL
+	PU root URL: file:/home/sridhar/eclipse-workspace/vault/target/classes/
+	Shared Cache Mode: UNSPECIFIED
+	Validation Mode: AUTO
+	Jar files URLs []
+	Managed classes names [
+		org.vault.model.Topic
+		org.vault.model.TopicDetail
+		org.vault.model.TopicGroup
+		org.vault.model.TopicTemplate
+		org.vault.model.User]
+	Mapping files names []
+	Properties []
+01-04-2019 16:28:23.486 [restartedMain] DEBUG o.h.i.internal.IntegratorServiceImpl.addIntegrator - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+01-04-2019 16:28:23.490 [restartedMain] DEBUG o.h.i.internal.IntegratorServiceImpl.addIntegrator - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+01-04-2019 16:28:23.496 [restartedMain] DEBUG o.h.i.internal.IntegratorServiceImpl.addIntegrator - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+01-04-2019 16:28:23.622 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.3.7.Final}
+01-04-2019 16:28:23.625 [restartedMain] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000206: hibernate.properties not found

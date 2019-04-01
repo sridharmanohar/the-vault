@@ -1,12 +1,15 @@
 package org.vault.controller;
 
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,6 +40,8 @@ import org.vault.validations.UserValidator;
 @Controller
 public class UserController {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+	
 	/**
 	 * Constants used for Views.
 	 */
@@ -89,7 +94,7 @@ public class UserController {
 	 */
 	@InitBinder(USER_OBJ_MODEL_KEY)
 	private void initUserBinder(WebDataBinder webDataBinder) {
-		System.out.println("user binder inoked");
+		LOGGER.debug("user binder inoked");
 		webDataBinder.setDisallowedFields("id");
 		webDataBinder.setValidator(new UserValidator());
 	}
@@ -108,7 +113,7 @@ public class UserController {
 	 */
 	@InitBinder(TOPIC_OBJ_MODEL_KEY)
 	private void initTopicBinder(WebDataBinder webDataBinder) {
-		System.out.println("topic binder inoked");
+		LOGGER.debug("topic binder inoked");
 		webDataBinder.setValidator(new TopicValidator());
 	}
 
@@ -167,10 +172,11 @@ public class UserController {
 			BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors())
 			return ADD_USER_VIEW;
-		System.out.println("Inside of Add User...and params are:" + user.getFirstname() + " " + user.getLastname());
+		LOGGER.debug("Inside of {} and Firstname is {} and Lastname is {}", "addUserProcess", user.getFirstname(), user.getLastname());
 		List<User> users = this.userrepo.findByFirstnameAndLastname(user.getFirstname(), user.getLastname());
 		if (users.isEmpty()) {
 			this.userrepo.save(user);
+			LOGGER.info("User Saved Successfully.");
 			model.addAttribute(SUCCESS_MODEL_KEY, "Op. Successful");
 			return ADD_USER_VIEW;
 		} else {
@@ -195,7 +201,7 @@ public class UserController {
 	 */
 	@GetMapping("/userDetails/{userId}")
 	public String showUserDetails(@PathVariable(name = "userId") int id, Model model) {
-		System.out.println("edit user");
+		LOGGER.debug("edit user");
 		User user = this.userrepo.findById(id);
 		model.addAttribute(USER_OBJ_MODEL_KEY, user);
 		return USER_DETAILS_VIEW;
@@ -233,10 +239,11 @@ public class UserController {
 		if (bindingResult.hasErrors())
 			return USER_DETAILS_VIEW;
 		List<User> users = this.userrepo.findByFirstnameAndLastname(user.getFirstname(), user.getLastname());
-		System.out.println("Call to db completed to find out duplicates.");
+		LOGGER.debug("Call to db completed to find out duplicates.");
 		if (users.isEmpty()) {
 			user.setId(id);
 			this.userrepo.save(user);
+			LOGGER.info("User details updated successfully.");
 			model.addAttribute(SUCCESS_MODEL_KEY, "Op. Successful.");
 			return USER_DETAILS_VIEW;
 		} else {
@@ -300,14 +307,14 @@ public class UserController {
 	public String processUserSecrets(@ModelAttribute(name = USER_SECRETS_MODEL_KEY) User user,
 			BindingResult bindingResult, Model model) {
 		List<TopicDetail> listTD = new ArrayList<TopicDetail>();
-		System.out.println("size of tg:" + user.getTopicGroups().size());
+		LOGGER.debug("size of tg:", user.getTopicGroups().size());
 
 		for (TopicGroup tg : user.getTopicGroups()) {
 			for (TopicDetail td : tg.getTopicDetails()) {
 				System.out.println("td id:" + td.getId());
 				boolean fieldLength = CustomValidationUtil.isFieldLengthValid(td.getPropvalue().length(), MIN_LENGTH,
 						MAX_LENGTH);
-				System.out.println("field len:" + fieldLength);
+				LOGGER.debug("field len:", fieldLength);
 				if (!fieldLength) {
 					bindingResult.reject(FIELD_SIZE_MSG_KEY, new String[] { SECRET_VAL_SIZE_MSG,
 							Integer.toString(MIN_LENGTH), Integer.toString(MAX_LENGTH) }, null);
@@ -315,23 +322,23 @@ public class UserController {
 				}
 				TopicDetail tdObj = new TopicDetail(td.getId(), td.getPropvalue(), td.getTopicGroup().getId(),
 						td.getTopicTemplate().getId());
-				System.out.println("adding td into list");
+				LOGGER.debug("adding td into list");
 				listTD.add(tdObj);
 			}
 
-			System.out.println("tg id:" + tg.getId());
-			System.out.println("size of list:" + listTD.size());
+			LOGGER.debug("tg id:", tg.getId());
+			LOGGER.debug("size of list:", listTD.size());
 			long start = System.currentTimeMillis();
 			this.topicGroupRepo.save(new TopicGroup(tg.getId(), listTD, tg.getTopic().getId(), user.getId()));
 			long end = System.currentTimeMillis();
-			System.out.println("total time taken to save:" + (end - start));
+			LOGGER.debug("total time taken to save:" + (end - start));
 		}
 		model.addAttribute(SUCCESS_MODEL_KEY, "Op. Successful.");
 		return USER_SECRETS_VIEW;
 	}
 
 	/**
-	 * 1. This method receives the request from the view to Add a Secret.
+	 * 1. This method receives the request from the view to Add a new User Secret.
 	 * 
 	 * 2. Fetches the List of Secret Topics available in the Vault repo.
 	 * 
@@ -359,7 +366,7 @@ public class UserController {
 	}
 
 	/**
-	 * 1. This method processes the Add a new Secret request.
+	 * 1. This method processes the Add a new User Secret request.
 	 * 
 	 * 2. A db call is made to find the list of all topics and then that is added to
 	 * the model along with the user id. This is a duplicate effort (already done in
@@ -406,7 +413,6 @@ public class UserController {
 		List<Topic> listTopics = this.topicRepo.findAll();
 		model.addAttribute(TOPIC_LIST_MODEL_KEY, listTopics);
 		model.addAttribute(USER_OBJ_MODEL_KEY, new User(id));
-		System.out.println("fetched in path:" + id);
 
 		if (httpServletRequest.getParameter("viewTemplate") != null) {
 			return ADD_SECRET_VIEW;
@@ -414,13 +420,11 @@ public class UserController {
 
 			TopicGroup tg = new TopicGroup(newtopic.getId(), id);
 
-			System.out.println("tt size:" + newtopic.getTopicTemplates().size());
 			for (TopicTemplate tt : newtopic.getTopicTemplates()) {
 				for (TopicDetail td : tt.getTopicDetails()) {
 
 					boolean fieldLength = CustomValidationUtil.isFieldLengthValid(td.getPropvalue().length(),
 							MIN_LENGTH, MAX_LENGTH);
-					System.out.println("field len:" + fieldLength);
 					if (!fieldLength) {
 						bindingResult.reject(FIELD_SIZE_MSG_KEY, new String[] { SECRET_VAL_SIZE_MSG,
 								Integer.toString(MIN_LENGTH), Integer.toString(MAX_LENGTH) }, null);

@@ -1,0 +1,9 @@
+01-04-2019 16:28:20.221 [restartedMain] DEBUG o.s.c.e.PropertySourcesPropertyResolver.logKeyFound - Found key 'spring.messages.basename' in PropertySource 'configurationProperties' with value of type String
+01-04-2019 16:28:20.229 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+01-04-2019 16:28:20.312 [restartedMain] DEBUG o.s.c.e.PropertySourcesPropertyResolver.logKeyFound - Found key 'spring.template.provider.cache' in PropertySource 'configurationProperties' with value of type String
+01-04-2019 16:28:20.481 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data repositories in DEFAULT mode.
+01-04-2019 16:28:20.490 [restartedMain] DEBUG o.s.b.f.s.DefaultListableBeanFactory.getSingleton - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
+01-04-2019 16:28:20.499 [restartedMain] DEBUG o.s.b.a.AutoConfigurationPackages.get - @EnableAutoConfiguration was declared on a class in the package 'org.vault'. Automatic @Repository and @Entity scanning is enabled.
+01-04-2019 16:28:20.502 [restartedMain] DEBUG o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Scanning for repositories in packages org.vault.
+01-04-2019 16:28:20.515 [restartedMain] DEBUG o.s.d.r.c.RepositoryComponentProvider.scanCandidateComponents - Identified candidate component class: file [/home/sridhar/eclipse-workspace/vault/target/classes/org/vault/repo/TopicGroupRepo.class]
+01-04-2019 16:28:20.516 [restartedMain] DEBUG o.s.d.r.c.RepositoryComponentProvider.scanCandidateComponents - Identified candidate component class: file [/home/sridhar/eclipse-workspace/vault/target/classes/org/vault/repo/TopicRepo.class]

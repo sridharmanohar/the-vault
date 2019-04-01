@@ -1,0 +1,240 @@
+01-04-2019 16:26:16.069 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:5> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7893c41a]
+01-04-2019 16:26:16.070 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroups.topic.topicname
+01-04-2019 16:26:16.070 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroups.topicDetails
+01-04-2019 16:26:16.071 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:6> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@3421652e]
+01-04-2019 16:26:16.071 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:7> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@14d70dc8]
+01-04-2019 16:26:16.071 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroups.user
+01-04-2019 16:26:16.072 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Property path deemed to be circular : topicGroups.user
+01-04-2019 16:26:16.073 [restartedMain] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan - Building LoadPlan...
+01-04-2019 16:26:16.087 [restartedMain] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins - processing queryspace <gen:0>
+01-04-2019 16:26:16.095 [restartedMain] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter.logTree - LoadPlan(entity=org.vault.model.User)
+    - Returns
+       - EntityReturnImpl(entity=org.vault.model.User, querySpaceUid=<gen:0>, path=org.vault.model.User)
+          - CollectionAttributeFetchImpl(collection=org.vault.model.User.topicGroups, querySpaceUid=<gen:1>, path=org.vault.model.User.topicGroups)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=org.vault.model.TopicGroup, querySpaceUid=<gen:2>, path=org.vault.model.User.topicGroups.<elements>)
+                - EntityAttributeFetchImpl(entity=org.vault.model.Topic, querySpaceUid=<gen:3>, path=org.vault.model.User.topicGroups.<elements>.topic)
+                   - CollectionAttributeFetchImpl(collection=org.vault.model.Topic.topicTemplates, querySpaceUid=<gen:4>, path=org.vault.model.User.topicGroups.<elements>.topic.topicTemplates)
+                      - (collection element) CollectionFetchableElementEntityGraph(entity=org.vault.model.TopicTemplate, querySpaceUid=<gen:5>, path=org.vault.model.User.topicGroups.<elements>.topic.topicTemplates.<elements>)
+                - CollectionAttributeFetchImpl(collection=org.vault.model.TopicGroup.topicDetails, querySpaceUid=<gen:6>, path=org.vault.model.User.topicGroups.<elements>.topicDetails)
+                   - (collection element) CollectionFetchableElementEntityGraph(entity=org.vault.model.TopicDetail, querySpaceUid=<gen:7>, path=org.vault.model.User.topicGroups.<elements>.topicDetails.<elements>)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=org.vault.model.User)
+          - SQL table alias mapping - user0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_4_0_}
+          - JOIN (JoinDefinedByMetadata(topicGroups)) : <gen:0> -> <gen:1>
+             - CollectionQuerySpaceImpl(uid=<gen:1>, collection=org.vault.model.User.topicGroups)
+                - SQL table alias mapping - topicgroup1_
+                - alias suffix - 1_
+                - suffixed key columns - {userid3_1_1_}
+                - entity-element alias suffix - 2_
+                - 2_entity-element suffixed key columns - id1_1_2_
+                - JOIN (JoinDefinedByMetadata(elements)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=org.vault.model.TopicGroup)
+                      - SQL table alias mapping - topicgroup1_
+                      - alias suffix - 2_
+                      - suffixed key columns - {id1_1_2_}
+                      - JOIN (JoinDefinedByMetadata(topic)) : <gen:2> -> <gen:3>
+                         - EntityQuerySpaceImpl(uid=<gen:3>, entity=org.vault.model.Topic)
+                            - SQL table alias mapping - topic2_
+                            - alias suffix - 3_
+                            - suffixed key columns - {id1_3_3_}
+
+01-04-2019 16:26:16.097 [restartedMain] DEBUG o.h.loader.entity.plan.EntityLoader.<init> - Static select for entity org.vault.model.User [NONE]: select user0_.id as id1_4_0_, user0_.firstname as firstnam2_4_0_, user0_.lastname as lastname3_4_0_, topicgroup1_.userid as userid3_1_1_, topicgroup1_.id as id1_1_1_, topicgroup1_.id as id1_1_2_, topicgroup1_.topicid as topicid2_1_2_, topicgroup1_.userid as userid3_1_2_, topic2_.id as id1_3_3_, topic2_.topicname as topicnam2_3_3_ from users user0_ left outer join topic_groups topicgroup1_ on user0_.id=topicgroup1_.userid left outer join topics topic2_ on topicgroup1_.topicid=topic2_.id where user0_.id=?
+01-04-2019 16:26:16.098 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@8a906e6]
+01-04-2019 16:26:16.098 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : firstname
+01-04-2019 16:26:16.098 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : lastname
+01-04-2019 16:26:16.099 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroups
+01-04-2019 16:26:16.099 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@42549b7a]
+01-04-2019 16:26:16.100 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5100bda6]
+01-04-2019 16:26:16.100 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroups.topic
+01-04-2019 16:26:16.101 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@20caa7fe]
+01-04-2019 16:26:16.101 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroups.topic.topicGroups
+01-04-2019 16:26:16.101 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Property path deemed to be circular : topicGroups.topic.topicGroups
+01-04-2019 16:26:16.102 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroups.topic.topicTemplates
+01-04-2019 16:26:16.102 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@1536c6bb]
+01-04-2019 16:26:16.102 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:5> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@48908cb5]
+01-04-2019 16:26:16.103 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroups.topic.topicname
+01-04-2019 16:26:16.103 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroups.topicDetails
+01-04-2019 16:26:16.103 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:6> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@3d90270e]
+01-04-2019 16:26:16.104 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:7> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5717eec3]
+01-04-2019 16:26:16.104 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroups.user
+01-04-2019 16:26:16.104 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Property path deemed to be circular : topicGroups.user
+01-04-2019 16:26:16.105 [restartedMain] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan - Building LoadPlan...
+01-04-2019 16:26:16.105 [restartedMain] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins - processing queryspace <gen:0>
+01-04-2019 16:26:16.107 [restartedMain] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter.logTree - LoadPlan(entity=org.vault.model.User)
+    - Returns
+       - EntityReturnImpl(entity=org.vault.model.User, querySpaceUid=<gen:0>, path=org.vault.model.User)
+          - CollectionAttributeFetchImpl(collection=org.vault.model.User.topicGroups, querySpaceUid=<gen:1>, path=org.vault.model.User.topicGroups)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=org.vault.model.TopicGroup, querySpaceUid=<gen:2>, path=org.vault.model.User.topicGroups.<elements>)
+                - EntityAttributeFetchImpl(entity=org.vault.model.Topic, querySpaceUid=<gen:3>, path=org.vault.model.User.topicGroups.<elements>.topic)
+                   - CollectionAttributeFetchImpl(collection=org.vault.model.Topic.topicTemplates, querySpaceUid=<gen:4>, path=org.vault.model.User.topicGroups.<elements>.topic.topicTemplates)
+                      - (collection element) CollectionFetchableElementEntityGraph(entity=org.vault.model.TopicTemplate, querySpaceUid=<gen:5>, path=org.vault.model.User.topicGroups.<elements>.topic.topicTemplates.<elements>)
+                - CollectionAttributeFetchImpl(collection=org.vault.model.TopicGroup.topicDetails, querySpaceUid=<gen:6>, path=org.vault.model.User.topicGroups.<elements>.topicDetails)
+                   - (collection element) CollectionFetchableElementEntityGraph(entity=org.vault.model.TopicDetail, querySpaceUid=<gen:7>, path=org.vault.model.User.topicGroups.<elements>.topicDetails.<elements>)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=org.vault.model.User)
+          - SQL table alias mapping - user0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_4_0_}
+          - JOIN (JoinDefinedByMetadata(topicGroups)) : <gen:0> -> <gen:1>
+             - CollectionQuerySpaceImpl(uid=<gen:1>, collection=org.vault.model.User.topicGroups)
+                - SQL table alias mapping - topicgroup1_
+                - alias suffix - 1_
+                - suffixed key columns - {userid3_1_1_}
+                - entity-element alias suffix - 2_
+                - 2_entity-element suffixed key columns - id1_1_2_
+                - JOIN (JoinDefinedByMetadata(elements)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=org.vault.model.TopicGroup)
+                      - SQL table alias mapping - topicgroup1_
+                      - alias suffix - 2_
+                      - suffixed key columns - {id1_1_2_}
+                      - JOIN (JoinDefinedByMetadata(topic)) : <gen:2> -> <gen:3>
+                         - EntityQuerySpaceImpl(uid=<gen:3>, entity=org.vault.model.Topic)
+                            - SQL table alias mapping - topic2_
+                            - alias suffix - 3_
+                            - suffixed key columns - {id1_3_3_}
+
+01-04-2019 16:26:16.108 [restartedMain] DEBUG o.h.loader.entity.plan.EntityLoader.<init> - Static select for entity org.vault.model.User [READ]: select user0_.id as id1_4_0_, user0_.firstname as firstnam2_4_0_, user0_.lastname as lastname3_4_0_, topicgroup1_.userid as userid3_1_1_, topicgroup1_.id as id1_1_1_, topicgroup1_.id as id1_1_2_, topicgroup1_.topicid as topicid2_1_2_, topicgroup1_.userid as userid3_1_2_, topic2_.id as id1_3_3_, topic2_.topicname as topicnam2_3_3_ from users user0_ left outer join topic_groups topicgroup1_ on user0_.id=topicgroup1_.userid left outer join topics topic2_ on topicgroup1_.topicid=topic2_.id where user0_.id=?
+01-04-2019 16:26:16.128 [restartedMain] DEBUG org.hibernate.loader.Loader.<init> - Static select for action ACTION_MERGE on entity org.vault.model.User: select user0_.id as id1_4_1_, user0_.firstname as firstnam2_4_1_, user0_.lastname as lastname3_4_1_, topicgroup1_.userid as userid3_1_3_, topicgroup1_.id as id1_1_3_, topicgroup1_.id as id1_1_0_, topicgroup1_.topicid as topicid2_1_0_, topicgroup1_.userid as userid3_1_0_ from users user0_ left outer join topic_groups topicgroup1_ on user0_.id=topicgroup1_.userid where user0_.id=?
+01-04-2019 16:26:16.129 [restartedMain] DEBUG org.hibernate.loader.Loader.<init> - Static select for action ACTION_REFRESH on entity org.vault.model.User: select user0_.id as id1_4_1_, user0_.firstname as firstnam2_4_1_, user0_.lastname as lastname3_4_1_, topicgroup1_.userid as userid3_1_3_, topicgroup1_.id as id1_1_3_, topicgroup1_.id as id1_1_0_, topicgroup1_.topicid as topicid2_1_0_, topicgroup1_.userid as userid3_1_0_ from users user0_ left outer join topic_groups topicgroup1_ on user0_.id=topicgroup1_.userid where user0_.id=?
+01-04-2019 16:26:16.129 [restartedMain] DEBUG o.h.p.entity.AbstractEntityPersister.logStaticSQL - Static SQL for entity: org.vault.model.TopicGroup
+01-04-2019 16:26:16.130 [restartedMain] DEBUG o.h.p.entity.AbstractEntityPersister.logStaticSQL -  Version select: select id from topic_groups where id =?
+01-04-2019 16:26:16.130 [restartedMain] DEBUG o.h.p.entity.AbstractEntityPersister.logStaticSQL -  Snapshot select: select topicgroup_.id, topicgroup_.topicid as topicid2_1_, topicgroup_.userid as userid3_1_ from topic_groups topicgroup_ where topicgroup_.id=?
+01-04-2019 16:26:16.130 [restartedMain] DEBUG o.h.p.entity.AbstractEntityPersister.debugf -  Insert 0: insert into topic_groups (topicid, userid, id) values (?, ?, ?)
+01-04-2019 16:26:16.130 [restartedMain] DEBUG o.h.p.entity.AbstractEntityPersister.debugf -  Update 0: update topic_groups set topicid=?, userid=? where id=?
+01-04-2019 16:26:16.130 [restartedMain] DEBUG o.h.p.entity.AbstractEntityPersister.debugf -  Delete 0: delete from topic_groups where id=?
+01-04-2019 16:26:16.131 [restartedMain] DEBUG o.h.p.entity.AbstractEntityPersister.logStaticSQL -  Identity insert: insert into topic_groups (topicid, userid) values (?, ?)
+01-04-2019 16:26:16.131 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1eca68c7]
+01-04-2019 16:26:16.131 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topic
+01-04-2019 16:26:16.132 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@67eea36e]
+01-04-2019 16:26:16.132 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topic.topicGroups
+01-04-2019 16:26:16.132 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Property path deemed to be circular : topic.topicGroups
+01-04-2019 16:26:16.133 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topic.topicTemplates
+01-04-2019 16:26:16.133 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@1958abbf]
+01-04-2019 16:26:16.133 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@44461057]
+01-04-2019 16:26:16.134 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topic.topicname
+01-04-2019 16:26:16.134 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicDetails
+01-04-2019 16:26:16.135 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@56213e62]
+01-04-2019 16:26:16.135 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:5> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@49ca65a8]
+01-04-2019 16:26:16.135 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : user
+01-04-2019 16:26:16.136 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:6> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@15932a7d]
+01-04-2019 16:26:16.136 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : user.firstname
+01-04-2019 16:26:16.136 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : user.lastname
+01-04-2019 16:26:16.136 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : user.topicGroups
+01-04-2019 16:26:16.137 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Property path deemed to be circular : user.topicGroups
+01-04-2019 16:26:16.137 [restartedMain] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan - Building LoadPlan...
+01-04-2019 16:26:16.137 [restartedMain] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins - processing queryspace <gen:0>
+01-04-2019 16:26:16.139 [restartedMain] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter.logTree - LoadPlan(entity=org.vault.model.TopicGroup)
+    - Returns
+       - EntityReturnImpl(entity=org.vault.model.TopicGroup, querySpaceUid=<gen:0>, path=org.vault.model.TopicGroup)
+          - EntityAttributeFetchImpl(entity=org.vault.model.Topic, querySpaceUid=<gen:1>, path=org.vault.model.TopicGroup.topic)
+             - CollectionAttributeFetchImpl(collection=org.vault.model.Topic.topicTemplates, querySpaceUid=<gen:2>, path=org.vault.model.TopicGroup.topic.topicTemplates)
+                - (collection element) CollectionFetchableElementEntityGraph(entity=org.vault.model.TopicTemplate, querySpaceUid=<gen:3>, path=org.vault.model.TopicGroup.topic.topicTemplates.<elements>)
+          - CollectionAttributeFetchImpl(collection=org.vault.model.TopicGroup.topicDetails, querySpaceUid=<gen:4>, path=org.vault.model.TopicGroup.topicDetails)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=org.vault.model.TopicDetail, querySpaceUid=<gen:5>, path=org.vault.model.TopicGroup.topicDetails.<elements>)
+          - EntityAttributeFetchImpl(entity=org.vault.model.User, querySpaceUid=<gen:6>, path=org.vault.model.TopicGroup.user)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=org.vault.model.TopicGroup)
+          - SQL table alias mapping - topicgroup0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+          - JOIN (JoinDefinedByMetadata(topic)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=org.vault.model.Topic)
+                - SQL table alias mapping - topic1_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_3_1_}
+          - JOIN (JoinDefinedByMetadata(user)) : <gen:0> -> <gen:6>
+             - EntityQuerySpaceImpl(uid=<gen:6>, entity=org.vault.model.User)
+                - SQL table alias mapping - user2_
+                - alias suffix - 2_
+                - suffixed key columns - {id1_4_2_}
+
+01-04-2019 16:26:16.139 [restartedMain] DEBUG o.h.loader.entity.plan.EntityLoader.<init> - Static select for entity org.vault.model.TopicGroup [NONE]: select topicgroup0_.id as id1_1_0_, topicgroup0_.topicid as topicid2_1_0_, topicgroup0_.userid as userid3_1_0_, topic1_.id as id1_3_1_, topic1_.topicname as topicnam2_3_1_, user2_.id as id1_4_2_, user2_.firstname as firstnam2_4_2_, user2_.lastname as lastname3_4_2_ from topic_groups topicgroup0_ left outer join topics topic1_ on topicgroup0_.topicid=topic1_.id left outer join users user2_ on topicgroup0_.userid=user2_.id where topicgroup0_.id=?
+01-04-2019 16:26:16.140 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3e2eb458]
+01-04-2019 16:26:16.140 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topic
+01-04-2019 16:26:16.141 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@289f6725]
+01-04-2019 16:26:16.141 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topic.topicGroups
+01-04-2019 16:26:16.141 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Property path deemed to be circular : topic.topicGroups
+01-04-2019 16:26:16.141 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topic.topicTemplates
+01-04-2019 16:26:16.142 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@1821d682]
+01-04-2019 16:26:16.142 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@27c5ff67]
+01-04-2019 16:26:16.142 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topic.topicname
+01-04-2019 16:26:16.143 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicDetails
+01-04-2019 16:26:16.143 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@743012f5]
+01-04-2019 16:26:16.143 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:5> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@16926815]
+01-04-2019 16:26:16.144 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : user
+01-04-2019 16:26:16.144 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:6> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@113983]
+01-04-2019 16:26:16.145 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : user.firstname
+01-04-2019 16:26:16.145 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : user.lastname
+01-04-2019 16:26:16.145 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : user.topicGroups
+01-04-2019 16:26:16.145 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Property path deemed to be circular : user.topicGroups
+01-04-2019 16:26:16.146 [restartedMain] DEBUG o.h.l.p.b.i.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan - Building LoadPlan...
+01-04-2019 16:26:16.146 [restartedMain] DEBUG o.h.l.p.e.i.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins - processing queryspace <gen:0>
+01-04-2019 16:26:16.148 [restartedMain] DEBUG o.h.l.p.b.spi.LoadPlanTreePrinter.logTree - LoadPlan(entity=org.vault.model.TopicGroup)
+    - Returns
+       - EntityReturnImpl(entity=org.vault.model.TopicGroup, querySpaceUid=<gen:0>, path=org.vault.model.TopicGroup)
+          - EntityAttributeFetchImpl(entity=org.vault.model.Topic, querySpaceUid=<gen:1>, path=org.vault.model.TopicGroup.topic)
+             - CollectionAttributeFetchImpl(collection=org.vault.model.Topic.topicTemplates, querySpaceUid=<gen:2>, path=org.vault.model.TopicGroup.topic.topicTemplates)
+                - (collection element) CollectionFetchableElementEntityGraph(entity=org.vault.model.TopicTemplate, querySpaceUid=<gen:3>, path=org.vault.model.TopicGroup.topic.topicTemplates.<elements>)
+          - CollectionAttributeFetchImpl(collection=org.vault.model.TopicGroup.topicDetails, querySpaceUid=<gen:4>, path=org.vault.model.TopicGroup.topicDetails)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=org.vault.model.TopicDetail, querySpaceUid=<gen:5>, path=org.vault.model.TopicGroup.topicDetails.<elements>)
+          - EntityAttributeFetchImpl(entity=org.vault.model.User, querySpaceUid=<gen:6>, path=org.vault.model.TopicGroup.user)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=org.vault.model.TopicGroup)
+          - SQL table alias mapping - topicgroup0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+          - JOIN (JoinDefinedByMetadata(topic)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=org.vault.model.Topic)
+                - SQL table alias mapping - topic1_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_3_1_}
+          - JOIN (JoinDefinedByMetadata(user)) : <gen:0> -> <gen:6>
+             - EntityQuerySpaceImpl(uid=<gen:6>, entity=org.vault.model.User)
+                - SQL table alias mapping - user2_
+                - alias suffix - 2_
+                - suffixed key columns - {id1_4_2_}
+
+01-04-2019 16:26:16.148 [restartedMain] DEBUG o.h.loader.entity.plan.EntityLoader.<init> - Static select for entity org.vault.model.TopicGroup [READ]: select topicgroup0_.id as id1_1_0_, topicgroup0_.topicid as topicid2_1_0_, topicgroup0_.userid as userid3_1_0_, topic1_.id as id1_3_1_, topic1_.topicname as topicnam2_3_1_, user2_.id as id1_4_2_, user2_.firstname as firstnam2_4_2_, user2_.lastname as lastname3_4_2_ from topic_groups topicgroup0_ left outer join topics topic1_ on topicgroup0_.topicid=topic1_.id left outer join users user2_ on topicgroup0_.userid=user2_.id where topicgroup0_.id=?
+01-04-2019 16:26:16.149 [restartedMain] DEBUG org.hibernate.loader.Loader.<init> - Static select for action ACTION_MERGE on entity org.vault.model.TopicGroup: select topicgroup0_.id as id1_1_1_, topicgroup0_.topicid as topicid2_1_1_, topicgroup0_.userid as userid3_1_1_, topicdetai1_.topicgrpid as topicgrp3_0_3_, topicdetai1_.id as id1_0_3_, topicdetai1_.id as id1_0_0_, topicdetai1_.propvalue as propvalu2_0_0_, topicdetai1_.topicgrpid as topicgrp3_0_0_, topicdetai1_.templateid as template4_0_0_ from topic_groups topicgroup0_ left outer join topic_details topicdetai1_ on topicgroup0_.id=topicdetai1_.topicgrpid where topicgroup0_.id=?
+01-04-2019 16:26:16.150 [restartedMain] DEBUG org.hibernate.loader.Loader.<init> - Static select for action ACTION_REFRESH on entity org.vault.model.TopicGroup: select topicgroup0_.id as id1_1_1_, topicgroup0_.topicid as topicid2_1_1_, topicgroup0_.userid as userid3_1_1_, topicdetai1_.topicgrpid as topicgrp3_0_3_, topicdetai1_.id as id1_0_3_, topicdetai1_.id as id1_0_0_, topicdetai1_.propvalue as propvalu2_0_0_, topicdetai1_.topicgrpid as topicgrp3_0_0_, topicdetai1_.templateid as template4_0_0_ from topic_groups topicgroup0_ left outer join topic_details topicdetai1_ on topicgroup0_.id=topicdetai1_.topicgrpid where topicgroup0_.id=?
+01-04-2019 16:26:16.151 [restartedMain] DEBUG o.h.p.entity.AbstractEntityPersister.logStaticSQL - Static SQL for entity: org.vault.model.TopicDetail
+01-04-2019 16:26:16.151 [restartedMain] DEBUG o.h.p.entity.AbstractEntityPersister.logStaticSQL -  Version select: select id from topic_details where id =?
+01-04-2019 16:26:16.151 [restartedMain] DEBUG o.h.p.entity.AbstractEntityPersister.logStaticSQL -  Snapshot select: select topicdetai_.id, topicdetai_.propvalue as propvalu2_0_, topicdetai_.topicgrpid as topicgrp3_0_, topicdetai_.templateid as template4_0_ from topic_details topicdetai_ where topicdetai_.id=?
+01-04-2019 16:26:16.151 [restartedMain] DEBUG o.h.p.entity.AbstractEntityPersister.debugf -  Insert 0: insert into topic_details (propvalue, topicgrpid, templateid, id) values (?, ?, ?, ?)
+01-04-2019 16:26:16.151 [restartedMain] DEBUG o.h.p.entity.AbstractEntityPersister.debugf -  Update 0: update topic_details set propvalue=?, topicgrpid=?, templateid=? where id=?
+01-04-2019 16:26:16.152 [restartedMain] DEBUG o.h.p.entity.AbstractEntityPersister.debugf -  Delete 0: delete from topic_details where id=?
+01-04-2019 16:26:16.152 [restartedMain] DEBUG o.h.p.entity.AbstractEntityPersister.logStaticSQL -  Identity insert: insert into topic_details (propvalue, topicgrpid, templateid) values (?, ?, ?)
+01-04-2019 16:26:16.152 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7c74dc6a]
+01-04-2019 16:26:16.152 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : propvalue
+01-04-2019 16:26:16.153 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroup
+01-04-2019 16:26:16.153 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@707722b7]
+01-04-2019 16:26:16.154 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroup.topic
+01-04-2019 16:26:16.154 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1caad17a]
+01-04-2019 16:26:16.154 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroup.topic.topicGroups
+01-04-2019 16:26:16.155 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Property path deemed to be circular : topicGroup.topic.topicGroups
+01-04-2019 16:26:16.155 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroup.topic.topicTemplates
+01-04-2019 16:26:16.155 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@324cd6c6]
+01-04-2019 16:26:16.156 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4a41678d]
+01-04-2019 16:26:16.156 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroup.topic.topicname
+01-04-2019 16:26:16.156 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroup.topicDetails
+01-04-2019 16:26:16.157 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Property path deemed to be circular : topicGroup.topicDetails
+01-04-2019 16:26:16.157 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroup.user
+01-04-2019 16:26:16.157 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:5> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@aa4ebe]
+01-04-2019 16:26:16.158 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroup.user.firstname
+01-04-2019 16:26:16.158 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroup.user.lastname
+01-04-2019 16:26:16.158 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicGroup.user.topicGroups
+01-04-2019 16:26:16.158 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Property path deemed to be circular : topicGroup.user.topicGroups
+01-04-2019 16:26:16.159 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicTemplate
+01-04-2019 16:26:16.159 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:6> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@16ada855]
+01-04-2019 16:26:16.159 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicTemplate.propname
+01-04-2019 16:26:16.160 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicTemplate.topic
+01-04-2019 16:26:16.160 [restartedMain] DEBUG o.h.l.p.b.i.spaces.QuerySpacesImpl.registerQuerySpace - Adding QuerySpace : uid = <gen:7> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@59cb3f0]
+01-04-2019 16:26:16.160 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicTemplate.topic.topicGroups
+01-04-2019 16:26:16.161 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Property path deemed to be circular : topicTemplate.topic.topicGroups
+01-04-2019 16:26:16.161 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicTemplate.topic.topicTemplates
+01-04-2019 16:26:16.161 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Property path deemed to be circular : topicTemplate.topic.topicTemplates
+01-04-2019 16:26:16.162 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicTemplate.topic.topicname
+01-04-2019 16:26:16.162 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Visiting attribute path : topicTemplate.topicDetails
+01-04-2019 16:26:16.162 [restartedMain] DEBUG o.h.p.w.spi.MetamodelGraphWalker.visitAttributeDefinition - Property path deemed to be circular : topicTemplate.topicDetails

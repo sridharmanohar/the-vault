@@ -1,0 +1,8 @@
+01-04-2019 16:29:40.032 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping.getHandler - Mapped to ResourceHttpRequestHandler [class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/], class path resource []]
+01-04-2019 16:29:40.117 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet.logResult - Completed 200 OK
+01-04-2019 16:31:41.473 [Thread-9] DEBUG o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.doClose - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@454047c1, started on Mon Apr 01 16:28:19 IST 2019
+01-04-2019 16:31:41.480 [Thread-9] DEBUG o.s.j.e.a.AnnotationMBeanExporter.destroy - Unregistering JMX-exposed beans on shutdown
+01-04-2019 16:31:41.481 [Thread-9] DEBUG o.s.j.e.a.AnnotationMBeanExporter.unregisterBeans - Unregistering JMX-exposed beans
+01-04-2019 16:31:41.483 [Thread-9] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+01-04-2019 16:31:41.486 [Thread-9] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+01-04-2019 16:31:41.486 [Thread-9] DEBUG o.h.internal.SessionFactoryImpl.close - HHH000031: Closing

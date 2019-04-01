@@ -1,0 +1,8 @@
+01-04-2019 16:26:14.596 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration true_false -> org.hibernate.type.TrueFalseType@60d3ee1d
+01-04-2019 16:26:14.598 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration yes_no -> org.hibernate.type.YesNoType@31b4153e
+01-04-2019 16:26:14.600 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration byte -> org.hibernate.type.ByteType@633f79b2
+01-04-2019 16:26:14.600 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration byte -> org.hibernate.type.ByteType@633f79b2
+01-04-2019 16:26:14.601 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@633f79b2
+01-04-2019 16:26:14.603 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration character -> org.hibernate.type.CharacterType@6409ac0c
+01-04-2019 16:26:14.603 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration char -> org.hibernate.type.CharacterType@6409ac0c
+01-04-2019 16:26:14.604 [restartedMain] DEBUG org.hibernate.type.BasicTypeRegistry.register - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@6409ac0c
