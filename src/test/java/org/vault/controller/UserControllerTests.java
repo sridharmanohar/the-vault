@@ -1,20 +1,19 @@
 package org.vault.controller;
 
 import java.util.ArrayList;
+
+
 import java.util.List;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.validation.Validator;
 import org.vault.model.User;
 import org.vault.repo.TopicGroupRepo;
 import org.vault.repo.TopicRepo;
@@ -44,9 +43,6 @@ public class UserControllerTests {
 //	@MockBean
 //	@Qualifier("userValidator")
 //	private Validator validator;
-
-	private User user0;
-	
 	
 	@Test
 	public void testCommonDashboardNavig() throws Exception {
