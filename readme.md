@@ -58,6 +58,9 @@
 ## Dev Utilities
 #### Spring Boot DevTools 2.1  
   . used the Automatic Restart feature of dev tools. (clean -> build ->  build project)  
+#### JPA Tools
+  . used JPA tools available in Elicpse IDE to generate persistent entities from Tables.  
+  . details of this is at: https://www.eclipse.org/webtools/dali/docs/3.2/user_guide/tasks006.htm  
 
 ## Other Springframework annotations and classes used
   . @Controller  
