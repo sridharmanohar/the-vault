@@ -30,35 +30,35 @@
   . displaying success/error messages.  
 
 ## Field Validation
-. Spring Validator (spring boot 2.1)
-  . all field-level validations are performed by implementing spring validator.
+#### Spring Validator (spring boot 2.1)  
+  . all field-level validations are performed by implementing spring validator.  
 
 ## Test(ing)
-. Junit 4.12
-  . used @RunWith and @Test.
-. AssertJ 3.11
-  . used assertThat to validate.	
-. Mockito 2.23
-  . used when and thenReturn to set expectations.
-. Spring Boot test
-  . used @MockBean to mock beans.
-  . used @WebMvcTest to define the class for which the mvc test was being carried out.
-  . used @DataJpaTest to perform integration testing (service layer).
-  . used @AutoConfigureTestDatabase to define to not to replace the mentioned TEST db in application.properties file in /test.
-. Spring Test
-  . used MockMvc to perform web request actions and used it's ResultActions methods like andExpect to verify the results. 
+#### Junit 4.12   
+  . used @RunWith and @Test.  
+#### AssertJ 3.11  
+  . used assertThat to validate.  	
+#### Mockito 2.23  
+  . used when and thenReturn to set expectations.  
+#### Spring Boot test  
+  . used @MockBean to mock beans.  
+  . used @WebMvcTest to define the class for which the mvc test was being carried out.  
+  . used @DataJpaTest to perform integration testing (service layer).  
+  . used @AutoConfigureTestDatabase to define to not to replace the mentioned TEST db in application.properties file in /test.  
+#### Spring Test  
+  . used MockMvc to perform web request actions and used it's ResultActions methods like andExpect to verify the results.   
 
 ## Logging
-. SLf4J 1.7
-  . used as the core log api and logback as an extension to this.
-. Logback 1.2
-  . used ConsoleAppender for stdout log output.
-  . used RollingFileAppender for defining a file based log output.
-  . also implemented SizeAndTimeBasedRollingPolicy to define the log archival process. 	
+#### SLf4J 1.7  
+  . used as the core log api and logback as an extension to this.  
+#### Logback 1.2  
+  . used ConsoleAppender for stdout log output.  
+  . used RollingFileAppender for defining a file based log output.  
+  . also implemented SizeAndTimeBasedRollingPolicy to define the log archival process.   	  
 
 ## Dev Utilities
-. Spring Boot DevTools 2.1
-  . used the Automatic Restart feature of dev tools. (clean -> build ->  build project)
+#### Spring Boot DevTools 2.1  
+  . used the Automatic Restart feature of dev tools. (clean -> build ->  build project)  
 
 ## Other Springframework annotations and classes used
   . @Controller
