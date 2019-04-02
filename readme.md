@@ -10,24 +10,24 @@
  . @SpringBootApplication
 
 ## Persitence Layer
-. Spring Boot Data JPA 2.1
-  . used Repository interface of Spring Data (not JpaRepository).
-. Hibernate 5.3
-  . implicitly used by spring boot as a persistance implementation layer (orm mapping tool).
-  . used @Fetch and FetchMode.
+#### Spring Boot Data JPA 2.1  
+  . used Repository interface of Spring Data (not JpaRepository).  
+#### Hibernate 5.3  
+  . implicitly used by spring boot as a persistance implementation layer (orm mapping tool).  
+  . used @Fetch and FetchMode.  
 
 ## Persitence Store
-. MySQl 8.0
-  . as persistence store.
-  . db components: tables with pk and fk as and where required.
+####  MySQl 8.0  
+  . as persistence store.  
+  . db components: tables with pk and fk as and where required.  
 
 ## UI
-. Thymeleaf 2.1
-  . template engine.
-  . thymeleaf tags used: th:href, th:object, th:action, th:if, th:text, th:each, th:field, th:value, th:errors, th:src
-. Bootstrap 4.3
-  . used for page and it's component styling.
-  . displaying success/error messages.
+#### Thymeleaf 2.1  
+  . template engine.  
+  . thymeleaf tags used: th:href, th:object, th:action, th:if, th:text, th:each, th:field, th:value, th:errors, th:src  
+#### Bootstrap 4.3  
+  . used for page and it's component styling.  
+  . displaying success/error messages.  
 
 ## Field Validation
 . Spring Validator (spring boot 2.1)
