@@ -5,7 +5,6 @@
  . core java api.  
  . collections used: Set(HashSet) and List(ArrayList).  
  . streams: used Collectors class of strem api to convert List to Set.
-
 #### Spring Boot 2.1  
  . @SpringBootApplication
 
@@ -61,30 +60,30 @@
   . used the Automatic Restart feature of dev tools. (clean -> build ->  build project)  
 
 ## Other Springframework annotations and classes used
-  . @Controller
-  . @Component
-  . @Autowired
-  . @InitBinder
-  . @GetMapping
-  . @PathVariable
-  . @PostMapping
-  . @Validated
-  . @ModelAttribute
-  . @Repository
-  . @Trasactional
-  . @Modifying
-  . WebDataBinder
-  . Model
-  . BindingResult
-  . Repository
-  . Validator
-  . Errors 
+  . @Controller  
+  . @Component  
+  . @Autowired  
+  . @InitBinder  
+  . @GetMapping  
+  . @PathVariable  
+  . @PostMapping  
+  . @Validated  
+  . @ModelAttribute  
+  . @Repository  
+  . @Trasactional  
+  . @Modifying  
+  . WebDataBinder  
+  . Model  
+  . BindingResult  
+  . Repository  
+  . Validator  
+  . Errors   
 
 ## Java Persistence API annotations used
-  . @Entity
-  . @Table
-  . @Id
-  . @GeneratedValue
-  . @OneToMany
-  . @ManyToOne
-  . @JoinColumn
+  . @Entity  
+  . @Table  
+  . @Id  
+  . @GeneratedValue  
+  . @OneToMany  
+  . @ManyToOne  
+  . @JoinColumn  
