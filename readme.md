@@ -1,12 +1,12 @@
 # Technology Stack 
 
 ## Core
-### Java 1.8  
+#### Java 1.8  
  . core java api.  
  . collections used: Set(HashSet) and List(ArrayList).  
  . streams: used Collectors class of strem api to convert List to Set.
 
-### Spring Boot 2.1  
+#### Spring Boot 2.1  
  . @SpringBootApplication
 
 ## Persitence Layer
