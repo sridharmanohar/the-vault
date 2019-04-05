@@ -89,4 +89,6 @@
   . @GeneratedValue  
   . @OneToMany  
   . @ManyToOne  
-  . @JoinColumn  
+  . @JoinColumn 
+
+## Approx. No.of Hours: 150 
