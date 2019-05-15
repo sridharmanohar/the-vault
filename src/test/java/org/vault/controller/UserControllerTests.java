@@ -2,9 +2,7 @@ package org.vault.controller;
 
 import java.util.ArrayList;
 
-
 import java.util.List;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +16,6 @@ import org.vault.model.User;
 import org.vault.repo.TopicGroupRepo;
 import org.vault.repo.TopicRepo;
 import org.vault.repo.UserRepo;
-
-
-
-
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(UserController.class)

@@ -26,7 +26,6 @@ public class TopicValidator implements Validator {
 	private static final int MAX_LENGTH = 40;
 	private static final String TOPIC_NAME_FIELD = "topicname";
 	private static final String FIELD_SIZE_MSG_KEY = "field.size";
-
 	/**
 	 * This overridden method is invoked every time the @InitBinder method with
 	 * the desired key is invoked, which happens whenever that particular key is

@@ -1,13 +1,9 @@
 package org.vault.controller;
 
 import java.util.List;
-
-
 import java.util.Set;
 import java.util.stream.Collectors;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,7 +59,7 @@ public class TopicController {
 	 */
 	@InitBinder(TOPIC_MODEL_KEY)
 	public void initTopicBinder(WebDataBinder webDataBinder) {
-		LOGGER.debug("init binder topic");
+		LOGGER.debug("init binder topic....");
 		webDataBinder.setDisallowedFields("id");
 		webDataBinder.setValidator(new TopicValidator());
 	}
